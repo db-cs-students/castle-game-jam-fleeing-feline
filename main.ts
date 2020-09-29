@@ -24,10 +24,20 @@ let cat = sprites.create(img`
 `, SpriteKind.Player)
 scene.cameraFollowSprite(cat)
 cat.ay = 300
+// Player controls
+controller.right.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {
+    if (controller.right.isPressed()) {
+        cat.vx = 100
+    }
+    
+})
 //  Player controls
-controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {
+controller.A.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed2() {
     cat.vy = -150
 })
+//  def right():
+//      cat.vx = 100
+//  controller.right.on_event(ControllerButtonEvent.PRESSED, right)
 //  Tilemap 
 scene.setBackgroundImage(img`
     5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555

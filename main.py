@@ -26,11 +26,18 @@ cat = sprites.create(img("""
 scene.camera_follow_sprite(cat)
 cat.ay = 300
 
-# Player controls
+#Player controls
 def on_event_pressed():
+    if controller.right.is_pressed():
+        cat.vx = 100
+controller.right.on_event(ControllerButtonEvent.PRESSED, on_event_pressed)
+# Player controls
+def on_event_pressed2():
     cat.vy = -150
-controller.A.on_event(ControllerButtonEvent.PRESSED, on_event_pressed)
-
+controller.A.on_event(ControllerButtonEvent.PRESSED, on_event_pressed2)
+# def right():
+#     cat.vx = 100
+# controller.right.on_event(ControllerButtonEvent.PRESSED, right)
 
 # Tilemap 
 scene.set_background_image(img("""
