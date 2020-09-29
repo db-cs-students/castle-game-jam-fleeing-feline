@@ -27,6 +27,9 @@ scene.camera_follow_sprite(cat)
 cat.ay = 300
 
 # Player controls
+def on_event_pressed():
+    cat.vy = -150
+controller.A.on_event(ControllerButtonEvent.PRESSED, on_event_pressed)
 
 
 # Tilemap 
