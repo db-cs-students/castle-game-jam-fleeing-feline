@@ -169,6 +169,186 @@ scene.set_tile_map(img("""
     ...eeee22ee...33.......eeee...99...88888..................aaa................fff
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 """))
+scene.set_tile(1, img("""
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+"""), True)
+scene.set_tile(2, img("""
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+"""), True)
+scene.set_tile(3, img("""
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+"""), True)
+scene.set_tile(4, img("""
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+"""), True)
+scene.set_tile(5, img("""
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+"""), True)
+scene.set_tile(6, img("""
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+"""), True)
+scene.set_tile(7, img("""
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+"""), True)
+scene.set_tile(8, img("""
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+"""), True)
+scene.set_tile(9, img("""
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+"""), True)
+scene.set_tile(10, img("""
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+"""), True)
 scene.set_tile(11, img("""
     d 1 d d d d d d d 1 d d d d d d
     d 1 d d d d d d d 1 d d d d d d
@@ -187,42 +367,27 @@ scene.set_tile(11, img("""
     d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 """), True)
-scene.set_tile(14, img("""
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-"""), True)
 scene.set_tile(12, img("""
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
-    c c c c c c c c c c c c c c c c
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 """), True)
+scene.set_tile(14, img(""" """), True)
+scene.set_tile(15, img(""" """))
+
 
 # powerup setup
 
