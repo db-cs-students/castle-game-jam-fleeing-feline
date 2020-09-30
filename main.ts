@@ -156,11 +156,11 @@ scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
     ...................6......................6.....................................
     ...................6......................6.....................................
-    ...................6......................6............5.....................fff
-    ....ee....ee.......6.e..11..e......88888..6.......77.........................fff
-    ..............33...6.e..11..e......88888..6...77..77......aaa................fff
-    ..........4...33..............99...88888......77..........aaa................fff
-    ...eeee22ee...33.......eeee...99...88888..................aaa................fff
+    ...................6......................6.....................................
+    ....ee....ee.......6.e..11..e......88888..6...........5........cccccc...........
+    ..............33...6.e..11..e......88888..6.......77......aaa................fff
+    ..........4...33..............99...88888......77..77......aaa................fff
+    ...eeee22ee...33.......eeee...99...88888......77..........aaa................fff
     ...eeee22ee...33.......eeee...99...88888..................aaa................fff
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 `)
@@ -199,4 +199,22 @@ scene.setTile(14, img`
     e e e e e e e e e e e e e e e e
     e e e e e e e e e e e e e e e e
     e e e e e e e e e e e e e e e e
+`, true)
+scene.setTile(12, img`
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
+    c c c c c c c c c c c c c c c c
 `, true)
