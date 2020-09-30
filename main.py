@@ -170,76 +170,76 @@ scene.set_tile_map(img("""
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 """))
 scene.set_tile(1, img("""
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 """), True)
 scene.set_tile(2, img("""
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
 """), True)
 scene.set_tile(3, img("""
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 """), True)
 scene.set_tile(4, img("""
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
 """), True)
 scene.set_tile(5, img("""
     d 1 d d d d d d d 1 d d d d d d
@@ -385,12 +385,62 @@ scene.set_tile(12, img("""
     d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 """), True)
-scene.set_tile(14, img(""" """), True)
-scene.set_tile(15, img(""" """))
+scene.set_tile(14, img("""
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+"""), True)
+scene.set_tile(15, img("""
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+"""))
 
 
 # powerup setup
 
 # enemies setup
+dog = sprites.create(img("""
+    . . 4 4 4 . . . . 4 4 4 . . . .
+    . 4 5 5 5 e . . e 5 5 5 4 . . .
+    4 5 5 5 5 5 e e 5 5 5 5 5 4 . .
+    4 5 5 4 4 5 5 5 5 4 4 5 5 4 . .
+    e 5 4 4 5 5 5 5 5 5 4 4 5 e . .
+    . e e 5 5 5 5 5 5 5 5 e e . . .
+    . . e 5 f 5 5 5 5 f 5 e . . . .
+    . . f 5 5 5 4 4 5 5 5 f . . f f
+    . . f 4 5 5 f f 5 5 6 f . f 5 f
+    . . . f 6 6 6 6 6 6 4 4 f 5 5 f
+    . . . f 4 5 5 5 5 5 5 4 4 5 f .
+    . . . f 5 5 5 5 5 4 5 5 f f . .
+    . . . f 5 f f f 5 f f 5 f . . .
+    . . . f f . . f f . . f f . . .
+"""))
 
 # win and lose effect

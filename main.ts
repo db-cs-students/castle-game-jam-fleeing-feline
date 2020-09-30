@@ -165,76 +165,76 @@ scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 `)
 scene.setTile(1, img`
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 `, true)
 scene.setTile(2, img`
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
 `, true)
 scene.setTile(3, img`
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 `, true)
 scene.setTile(4, img`
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
+    4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
 `, true)
 scene.setTile(5, img`
     d 1 d d d d d d d 1 d d d d d d
@@ -380,5 +380,57 @@ scene.setTile(12, img`
     d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 `, true)
-scene.setTile(14, img` `, true)
-scene.setTile(15, img` `)
+scene.setTile(14, img`
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+`, true)
+scene.setTile(15, img`
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+    f f f f f f f f f f f f f f f f
+`)
+//  powerup setup
+//  enemies setup
+let dog = sprites.create(img`
+    . . 4 4 4 . . . . 4 4 4 . . . .
+    . 4 5 5 5 e . . e 5 5 5 4 . . .
+    4 5 5 5 5 5 e e 5 5 5 5 5 4 . .
+    4 5 5 4 4 5 5 5 5 4 4 5 5 4 . .
+    e 5 4 4 5 5 5 5 5 5 4 4 5 e . .
+    . e e 5 5 5 5 5 5 5 5 e e . . .
+    . . e 5 f 5 5 5 5 f 5 e . . . .
+    . . f 5 5 5 4 4 5 5 5 f . . f f
+    . . f 4 5 5 f f 5 5 6 f . f 5 f
+    . . . f 6 6 6 6 6 6 4 4 f 5 5 f
+    . . . f 4 5 5 5 5 5 5 4 4 5 f .
+    . . . f 5 5 5 5 5 4 5 5 f f . .
+    . . . f 5 f f f 5 f f 5 f . . .
+    . . . f f . . f f . . f f . . .
+`)
