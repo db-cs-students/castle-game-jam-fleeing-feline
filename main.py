@@ -426,27 +426,38 @@ scene.set_tile(15, img("""
 
 # powerup setup
 
+
 # enemies setup
+def on_hit_tile(sprite):
+    game.over()
+scene.on_hit_tile(SpriteKind.player, 2, on_hit_tile)
 
 
-dog = sprites.create(img("""
-    . . 4 4 4 . . . . 4 4 4 . . . .
-    . 4 5 5 5 e . . e 5 5 5 4 . . .
-    4 5 5 5 5 5 e e 5 5 5 5 5 4 . .
-    4 5 5 4 4 5 5 5 5 4 4 5 5 4 . .
-    e 5 4 4 5 5 5 5 5 5 4 4 5 e . .
-    . e e 5 5 5 5 5 5 5 5 e e . . .
-    . . e 5 f 5 5 5 5 f 5 e . . . .
-    . . f 5 5 5 4 4 5 5 5 f . . f f
-    . . f 4 5 5 f f 5 5 6 f . f 5 f
-    . . . f 6 6 6 6 6 6 4 4 f 5 5 f
-    . . . f 4 5 5 5 5 5 5 4 4 5 f .
-    . . . f 5 5 5 5 5 4 5 5 f f . .
-    . . . f 5 f f f 5 f f 5 f . . .
-    . . . f f . . f f . . f f . . .
-"""))
-dog.set_kind(SpriteKind.enemy)
-dog.ay = 300
-tiles.place_on_tile(dog, tiles.get_tile_location(44, 8))
+# dog = sprites.create(img("""
+#     . . 4 4 4 . . . . 4 4 4 . . . .
+#     . 4 5 5 5 e . . e 5 5 5 4 . . .
+#     4 5 5 5 5 5 e e 5 5 5 5 5 4 . .
+#     4 5 5 4 4 5 5 5 5 4 4 5 5 4 . .
+#     e 5 4 4 5 5 5 5 5 5 4 4 5 e . .
+#     . e e 5 5 5 5 5 5 5 5 e e . . .
+#     . . e 5 f 5 5 5 5 f 5 e . . . .
+#     . . f 5 5 5 4 4 5 5 5 f . . f f
+#     . . f 4 5 5 f f 5 5 6 f . f 5 f
+#     . . . f 6 6 6 6 6 6 4 4 f 5 5 f
+#     . . . f 4 5 5 5 5 5 5 4 4 5 f .
+#     . . . f 5 5 5 5 5 4 5 5 f f . .
+#     . . . f 5 f f f 5 f f 5 f . . .
+#     . . . f f . . f f . . f f . . .
+# """))
+# dog.set_kind(SpriteKind.enemy)
+# dog.ay = 300
+#tiles.place_on_tile(dog, tiles.get_tile_location(44, 8))
+# def on_update():
+#     pass
+# game.on_update(on_update)
+# def on_overlap_tile(sprite, location):
+#     dog.follow(cat)
 
-# win and lose effect
+# scene.on_overlap_tile(SpriteKind.player, tiles.get_tile_location(46, 8), on_overlap_tile)
+
+# win/lose effect
