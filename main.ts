@@ -439,6 +439,25 @@ tiles.placeOnTile(powerup1, tiles.getTileLocation(10, 6))
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy(effects.coolRadial, 100)
 })
+let powerup2 = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . 7 7 7 7 7 . . . . . .
+    . . . . 7 7 7 7 7 7 7 . . . . .
+    . . . . 7 7 7 7 7 7 7 . . . . .
+    . . . . 7 7 7 7 7 7 7 . . . . .
+    . . . . 7 7 7 7 7 7 7 . . . . .
+    . . . . 7 7 7 7 7 7 7 . . . . .
+    . . . . . 7 7 7 7 7 . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`, SpriteKind.Projectile)
+tiles.placeOnTile(powerup1, tiles.getTileLocation(10, 6))
 //  enemies setup
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
     game.over()

@@ -450,6 +450,26 @@ def on_overlap(sprite, otherSprite):
     otherSprite.destroy(effects.cool_radial, 100)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap)
 
+powerup2 = sprites.create(img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . 7 7 7 7 7 . . . . . .
+    . . . . 7 7 7 7 7 7 7 . . . . .
+    . . . . 7 7 7 7 7 7 7 . . . . .
+    . . . . 7 7 7 7 7 7 7 . . . . .
+    . . . . 7 7 7 7 7 7 7 . . . . .
+    . . . . 7 7 7 7 7 7 7 . . . . .
+    . . . . . 7 7 7 7 7 . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+"""), SpriteKind.projectile)
+tiles.place_on_tile(powerup1, tiles.get_tile_location(10, 6))
+
 # enemies setup
 def on_hit_tile(sprite):
     game.over()
