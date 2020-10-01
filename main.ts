@@ -161,7 +161,7 @@ scene.setTileMap(img`
     ..............33...6.e..11..e......88888..6..........77......aaa.............fff
     ..........4...33..............99...88888.........77..77......aaa.............fff
     ...eeee22ee...33.......eeee...99...88888.........77..........aaa.............fff
-    ...eeee22ee...33.......eeee...99...88888....dd...............aaa.............fff
+    ...eeee22ee...33.......eeee...99...88888dd..dd...............aaa.............fff
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 `)
 scene.setTile(1, img`
@@ -434,3 +434,6 @@ let dog = sprites.create(img`
     . . . f 5 f f f 5 f f 5 f . . .
     . . . f f . . f f . . f f . . .
 `)
+dog.setKind(SpriteKind.Enemy)
+dog.ay = 300
+tiles.placeOnTile(dog, tiles.getTileLocation(44, 8))

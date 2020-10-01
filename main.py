@@ -147,6 +147,7 @@ cat = sprites.create(img("""
 scene.camera_follow_sprite(cat)
 cat.ay = 300
 
+
 #Player controls
 controller.move_sprite(cat, 100, 0)
 
@@ -166,7 +167,7 @@ scene.set_tile_map(img("""
     ..............33...6.e..11..e......88888..6..........77......aaa.............fff
     ..........4...33..............99...88888.........77..77......aaa.............fff
     ...eeee22ee...33.......eeee...99...88888.........77..........aaa.............fff
-    ...eeee22ee...33.......eeee...99...88888....dd...............aaa.............fff
+    ...eeee22ee...33.......eeee...99...88888dd..dd...............aaa.............fff
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 """))
 scene.set_tile(1, img("""
@@ -426,6 +427,8 @@ scene.set_tile(15, img("""
 # powerup setup
 
 # enemies setup
+
+
 dog = sprites.create(img("""
     . . 4 4 4 . . . . 4 4 4 . . . .
     . 4 5 5 5 e . . e 5 5 5 4 . . .
@@ -442,5 +445,8 @@ dog = sprites.create(img("""
     . . . f 5 f f f 5 f f 5 f . . .
     . . . f f . . f f . . f f . . .
 """))
+dog.set_kind(SpriteKind.enemy)
+dog.ay = 300
+tiles.place_on_tile(dog, tiles.get_tile_location(44, 8))
 
 # win and lose effect
