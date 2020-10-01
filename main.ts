@@ -425,9 +425,9 @@ let powerup1 = sprites.create(img`
     . . . . . a a a a . . . . . . .
     . . . . a a a a a a . . . . . .
     . . . . a a a a a a . . . . . .
-    . . . . a a a a 5 a . . . . . .
-    . . . . . a a a 5 5 . . . . . .
-    . . . . . . . . . 5 5 . . . . .
+    . . . . a a a a 4 a . . . . . .
+    . . . . . a a a 4 4 . . . . . .
+    . . . . . . . . . 4 4 . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -436,6 +436,9 @@ let powerup1 = sprites.create(img`
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Food)
 tiles.placeOnTile(powerup1, tiles.getTileLocation(10, 6))
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
+    otherSprite.destroy(effects.coolRadial, 100)
+})
 //  enemies setup
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
     game.over()
