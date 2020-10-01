@@ -159,7 +159,7 @@ scene.setTileMap(img`
     ...................6......................6.....................................
     ....ee....ee.......6.e..11..e......88888..6..............5........cccccc........
     ..............33...6.e..11..e......88888..6..........77......aaa.............fff
-    ..........4...33..............99...88888.........77..77......aaa.............fff
+    ..............33..............99...88888.........77..77......aaa.............fff
     ...eeee22ee...33.......eeee...99...88888.........77..........aaa.............fff
     ...eeee22ee...33.......eeee...99...88888dd..dd...............aaa.............fff
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -417,6 +417,25 @@ scene.setTile(15, img`
     f f f f f f f f f f f f f f f f
 `)
 //  powerup setup
+let powerup1 = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . a a a a . . . . . . .
+    . . . . a a a a a a . . . . . .
+    . . . . a a a a a a . . . . . .
+    . . . . a a a a 5 a . . . . . .
+    . . . . . a a a 5 5 . . . . . .
+    . . . . . . . . . 5 5 . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`, SpriteKind.Food)
+tiles.placeOnTile(powerup1, tiles.getTileLocation(10, 6))
 //  enemies setup
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
     game.over()
