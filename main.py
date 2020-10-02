@@ -469,7 +469,8 @@ cat = sprites.create(img("""
 """), SpriteKind.player)
 scene.camera_follow_sprite(cat)
 cat.ay = 300
-tiles.place_on_tile(cat, tiles.get_tile_location(0, 8))
+tiles.place_on_tile(cat, tiles.get_tile_location(40, 8))
+
 #Player controls
 
 controller.move_sprite(cat, 100, 0)
@@ -560,9 +561,10 @@ dog = sprites.create(img("""
     . . . f 5 f f f 5 f f 5 f . . .
     . . . f f . . f f . . f f . . .
 """))
+tiles.place_on_tile(dog, tiles.get_tile_location(44, 8))
 dog.set_kind(SpriteKind.enemy)
 dog.ay = 300
-tiles.place_on_tile(dog, tiles.get_tile_location(44, 8))
+
 
 def on_hit_tile2(cat):
     dog.follow(cat)
