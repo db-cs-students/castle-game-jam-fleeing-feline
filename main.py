@@ -567,7 +567,7 @@ dog.ay = 300
 
 
 def on_hit_tile2(cat):
-    dog.follow(cat)
+    dog.follow(cat, 85)
 scene.on_hit_tile(SpriteKind.player, 13 , on_hit_tile2)
 
 

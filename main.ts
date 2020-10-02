@@ -556,5 +556,5 @@ tiles.placeOnTile(dog, tiles.getTileLocation(44, 8))
 dog.setKind(SpriteKind.Enemy)
 dog.ay = 300
 scene.onHitTile(SpriteKind.Player, 13, function on_hit_tile2(cat: Sprite) {
-    dog.follow(cat)
+    dog.follow(cat, 85)
 })
