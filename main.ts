@@ -146,15 +146,13 @@ let cat = sprites.create(img`
 `, SpriteKind.Player)
 scene.cameraFollowSprite(cat)
 cat.ay = 300
-tiles.placeOnTile(cat, tiles.getTileLocation(0, 8))
 // Player controls
 controller.moveSprite(cat, 100, 0)
 let double_jump = true
-controller.A.onEvent(ControllerButtonEvent.Pressed, function jump_up() {
+game.onUpdate(function on_update() {
     
-    if (double_jump) {
-        cat.vy = -100
-        double_jump = cat.isHittingTile(CollisionDirection.Bottom)
+    if (cat.isHittingTile(CollisionDirection.Bottom)) {
+        double_jump = true
     }
     
 })
@@ -168,8 +166,8 @@ scene.setTileMap(img`
     ..............33...6.e..11..e......88888..6..........77..5...aaa.............fff
     ..............33..............99...88888.........77..77......aaa.............fff
     ...eeee22ee...33.......eeee...99...88888.........77..........aaa.............fff
-    ...eeee22ee...33.......eeee...99...88888dd..dd...............aaa.............fff
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    ...eeee22ee...33.......eeee...99...88888....dd...............aaa.............fff
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbddbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 `)
 scene.setTile(1, img`
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -388,31 +386,80 @@ scene.setTile(14, img`
     e e e e e e e e e e e e e e e e
 `, true)
 scene.setTile(15, img`
-    .cccccccccccccc.
-    cbddddddddddddbc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cdddddddddbbdddc
-    fdddddddddbbdddf
-    fdddddddddbbdddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    ffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
+    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
+    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
+    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
+    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
+    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 `)
+tiles.placeOnTile(cat, tiles.getTileLocation(0, 8))
 //  powerup one
 let powerup1 = sprites.create(img`
     . . . . . . . . . . . . . . . .

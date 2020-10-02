@@ -147,20 +147,17 @@ cat = sprites.create(img("""
 """), SpriteKind.player)
 scene.camera_follow_sprite(cat)
 cat.ay = 300
-tiles.place_on_tile(cat, tiles.get_tile_location(0, 8))
 
 #Player controls
 controller.move_sprite(cat, 100, 0)
 
 double_jump = True
 
-def jump_up():
+def on_update():
     global double_jump
-    if double_jump:
-        cat.vy = -100
-        double_jump = cat.is_hitting_tile(CollisionDirection.BOTTOM)
-controller.A.on_event(ControllerButtonEvent.PRESSED, jump_up)
-
+    if cat.is_hitting_tile(CollisionDirection.Bottom):
+        double_jump = True
+game.on_update(on_update)
 
 
 # Tilemap 
@@ -173,8 +170,8 @@ scene.set_tile_map(img("""
     ..............33...6.e..11..e......88888..6..........77..5...aaa.............fff
     ..............33..............99...88888.........77..77......aaa.............fff
     ...eeee22ee...33.......eeee...99...88888.........77..........aaa.............fff
-    ...eeee22ee...33.......eeee...99...88888dd..dd...............aaa.............fff
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    ...eeee22ee...33.......eeee...99...88888....dd...............aaa.............fff
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbddbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 """))
 scene.set_tile(1, img("""
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -393,31 +390,80 @@ scene.set_tile(14, img("""
     e e e e e e e e e e e e e e e e
 """), True)
 scene.set_tile(15, img("""
-    .cccccccccccccc.
-    cbddddddddddddbc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cddddddddddddddc
-    cdddddddddbbdddc
-    fdddddddddbbdddf
-    fdddddddddbbdddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    fddddddddddddddf
-    ffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
+    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
+    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
+    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
+    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
+    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 """))
+tiles.place_on_tile(cat, tiles.get_tile_location(0, 8))
 
 
 # powerup one
@@ -495,9 +541,6 @@ scene.on_hit_tile(SpriteKind.player, 2, on_hit_tile)
 # dog.set_kind(SpriteKind.enemy)
 # dog.ay = 300
 #tiles.place_on_tile(dog, tiles.get_tile_location(44, 8))
-# def on_update():
-#     pass
-# game.on_update(on_update)
 # def on_overlap_tile(sprite, location):
 #     dog.follow(cat)
 
