@@ -149,8 +149,14 @@ cat.ay = 300
 tiles.placeOnTile(cat, tiles.getTileLocation(0, 8))
 // Player controls
 controller.moveSprite(cat, 100, 0)
+let double_jump = true
 controller.A.onEvent(ControllerButtonEvent.Pressed, function jump_up() {
-    cat.vy = -140
+    
+    if (double_jump) {
+        cat.vy = -100
+        double_jump = cat.isHittingTile(CollisionDirection.Bottom)
+    }
+    
 })
 //  Tilemap 
 scene.setTileMap(img`
@@ -382,24 +388,32 @@ scene.setTile(14, img`
     e e e e e e e e e e e e e e e e
 `, true)
 scene.setTile(15, img`
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
+    .cccccccccccccc.
+    cbddddddddddddbc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cdddddddddbbdddc
+    fdddddddddbbdddf
+    fdddddddddbbdddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    ffffffffffffffff
 `)
-//  powerup setup
+//  powerup one
 let powerup1 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -422,6 +436,7 @@ tiles.placeOnTile(powerup1, tiles.getTileLocation(10, 6))
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy(effects.coolRadial, 100)
 })
+//  Powerup two
 let powerup2 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .

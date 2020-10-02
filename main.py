@@ -152,8 +152,13 @@ tiles.place_on_tile(cat, tiles.get_tile_location(0, 8))
 #Player controls
 controller.move_sprite(cat, 100, 0)
 
+double_jump = True
+
 def jump_up():
-    cat.vy = -140
+    global double_jump
+    if double_jump:
+        cat.vy = -100
+        double_jump = cat.is_hitting_tile(CollisionDirection.BOTTOM)
 controller.A.on_event(ControllerButtonEvent.PRESSED, jump_up)
 
 
@@ -388,26 +393,34 @@ scene.set_tile(14, img("""
     e e e e e e e e e e e e e e e e
 """), True)
 scene.set_tile(15, img("""
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
-    f f f f f f f f f f f f f f f f
+    .cccccccccccccc.
+    cbddddddddddddbc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cddddddddddddddc
+    cdddddddddbbdddc
+    fdddddddddbbdddf
+    fdddddddddbbdddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    fddddddddddddddf
+    ffffffffffffffff
 """))
 
 
-# powerup setup
+# powerup one
 powerup1 = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -432,6 +445,7 @@ def on_overlap(sprite, otherSprite):
     otherSprite.destroy(effects.cool_radial, 100)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap)
 
+# Powerup two
 powerup2 = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
