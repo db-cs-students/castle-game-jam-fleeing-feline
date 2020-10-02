@@ -147,7 +147,7 @@ cat = sprites.create(img("""
 """), SpriteKind.player)
 scene.camera_follow_sprite(cat)
 cat.ay = 300
-
+tiles.place_on_tile(cat, tiles.get_tile_location(0, 8))
 
 #Player controls
 controller.move_sprite(cat, 100, 0)
@@ -164,8 +164,8 @@ scene.set_tile_map(img("""
     ...................6......................6.....................................
     ...................6......................6.....................................
     ...................6......................6.....................................
-    ....ee....ee.......6.e..11..e......88888..6..............5........cccccc........
-    ..............33...6.e..11..e......88888..6..........77......aaa.............fff
+    ....ee....ee.......6.e..11..e......88888..6.......................cccccc........
+    ..............33...6.e..11..e......88888..6..........77..5...aaa.............fff
     ..............33..............99...88888.........77..77......aaa.............fff
     ...eeee22ee...33.......eeee...99...88888.........77..........aaa.............fff
     ...eeee22ee...33.......eeee...99...88888dd..dd...............aaa.............fff
@@ -242,24 +242,6 @@ scene.set_tile(4, img("""
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-"""), True)
-scene.set_tile(5, img("""
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 """), True)
 scene.set_tile(6, img("""
     d 1 d d d d d d d 1 d d d d d d
@@ -454,13 +436,13 @@ powerup2 = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-    . . . . . 7 7 7 7 7 . . . . . .
-    . . . . 7 7 7 7 7 7 7 . . . . .
-    . . . . 7 7 7 7 7 7 7 . . . . .
-    . . . . 7 7 7 7 7 7 7 . . . . .
-    . . . . 7 7 7 7 7 7 7 . . . . .
-    . . . . 7 7 7 7 7 7 7 . . . . .
-    . . . . . 7 7 7 7 7 . . . . . .
+    . . . . . 2 2 2 2 2 . . . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . . 2 2 2 2 2 . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -468,7 +450,11 @@ powerup2 = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 """), SpriteKind.projectile)
-tiles.place_on_tile(powerup1, tiles.get_tile_location(10, 6))
+tiles.place_on_tile(powerup2, tiles.get_tile_location(57, 4))
+
+def on_overlap2(sprite, otherSprite):
+    otherSprite.destroy(effects.cool_radial, )
+sprites.on_overlap(SpriteKind.player, SpriteKind.projectile, on_overlap2)
 
 # enemies setup
 def on_hit_tile(sprite):

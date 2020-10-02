@@ -146,6 +146,7 @@ let cat = sprites.create(img`
 `, SpriteKind.Player)
 scene.cameraFollowSprite(cat)
 cat.ay = 300
+tiles.placeOnTile(cat, tiles.getTileLocation(0, 8))
 // Player controls
 controller.moveSprite(cat, 100, 0)
 controller.A.onEvent(ControllerButtonEvent.Pressed, function jump_up() {
@@ -157,8 +158,8 @@ scene.setTileMap(img`
     ...................6......................6.....................................
     ...................6......................6.....................................
     ...................6......................6.....................................
-    ....ee....ee.......6.e..11..e......88888..6..............5........cccccc........
-    ..............33...6.e..11..e......88888..6..........77......aaa.............fff
+    ....ee....ee.......6.e..11..e......88888..6.......................cccccc........
+    ..............33...6.e..11..e......88888..6..........77..5...aaa.............fff
     ..............33..............99...88888.........77..77......aaa.............fff
     ...eeee22ee...33.......eeee...99...88888.........77..........aaa.............fff
     ...eeee22ee...33.......eeee...99...88888dd..dd...............aaa.............fff
@@ -235,24 +236,6 @@ scene.setTile(4, img`
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
-`, true)
-scene.setTile(5, img`
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 `, true)
 scene.setTile(6, img`
     d 1 d d d d d d d 1 d d d d d d
@@ -443,13 +426,13 @@ let powerup2 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-    . . . . . 7 7 7 7 7 . . . . . .
-    . . . . 7 7 7 7 7 7 7 . . . . .
-    . . . . 7 7 7 7 7 7 7 . . . . .
-    . . . . 7 7 7 7 7 7 7 . . . . .
-    . . . . 7 7 7 7 7 7 7 . . . . .
-    . . . . 7 7 7 7 7 7 7 . . . . .
-    . . . . . 7 7 7 7 7 . . . . . .
+    . . . . . 2 2 2 2 2 . . . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . . . . 2 2 2 2 2 . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -457,7 +440,10 @@ let powerup2 = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Projectile)
-tiles.placeOnTile(powerup1, tiles.getTileLocation(10, 6))
+tiles.placeOnTile(powerup2, tiles.getTileLocation(57, 4))
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
+    otherSprite.destroy(effects.coolRadial)
+})
 //  enemies setup
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
     game.over()
