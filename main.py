@@ -358,22 +358,47 @@ scene.set_tile(13, img("""
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 """), True)
 scene.set_tile(14, img("""
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeefffeefeefffeeeeeeeeeeee
+    eeeeeeeeeeeeefffeefeefffeeeeeeeeeeee
+    eeeeeeeeeeeeefffeefeefffeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
 """), True)
 scene.set_tile(15, img("""
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -469,7 +494,7 @@ cat = sprites.create(img("""
 """), SpriteKind.player)
 scene.camera_follow_sprite(cat)
 cat.ay = 300
-tiles.place_on_tile(cat, tiles.get_tile_location(40, 8))
+tiles.place_on_tile(cat, tiles.get_tile_location(0, 8))
 
 #Player controls
 

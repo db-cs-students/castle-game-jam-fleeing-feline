@@ -357,22 +357,47 @@ scene.setTile(13, img`
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 `, true)
 scene.setTile(14, img`
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeefffeefeefffeeeeeeeeeeee
+    eeeeeeeeeeeeefffeefeefffeeeeeeeeeeee
+    eeeeeeeeeeeeefffeefeefffeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeefeeeeeeeeeeeeeeeee
 `, true)
 scene.setTile(15, img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
@@ -467,7 +492,7 @@ let cat = sprites.create(img`
 `, SpriteKind.Player)
 scene.cameraFollowSprite(cat)
 cat.ay = 300
-tiles.placeOnTile(cat, tiles.getTileLocation(40, 8))
+tiles.placeOnTile(cat, tiles.getTileLocation(0, 8))
 // Player controls
 controller.moveSprite(cat, 100, 0)
 let double_jump = true
