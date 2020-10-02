@@ -128,50 +128,18 @@ scene.set_background_image(img("""
     5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
 """))
 
-# player setup
-cat = sprites.create(img("""
-    . . . . . . . . . . . . . .
-    e e e . . . . e e e . . . .
-    c d d c . . c d d c . . . .
-    c b d d f f d d b c . . . .
-    c 3 b d d b d b 3 c . . . .
-    f b 3 d d d d 3 b f . . . .
-    e d d d d d d d d e . . . .
-    e d f d d d d f d e b f b .
-    f d d f d d f d d f f d f .
-    f b d d b b d d 2 b f d f .
-    . f 2 2 2 2 2 2 d b d b f .
-    . f d d d d d d d f f f . .
-    . f d b d f f f d f . . . .
-    . . f f f f . . f f . . . .
-"""), SpriteKind.player)
-scene.camera_follow_sprite(cat)
-cat.ay = 300
-
-#Player controls
-controller.move_sprite(cat, 100, 0)
-
-double_jump = True
-
-def on_update():
-    global double_jump
-    if cat.is_hitting_tile(CollisionDirection.Bottom):
-        double_jump = True
-game.on_update(on_update)
-
-
 # Tilemap 
 scene.set_tile_map(img("""
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
     ...................6......................6.....................................
     ...................6......................6.....................................
     ...................6......................6.....................................
-    ....ee....ee.......6.e..11..e......88888..6.......................cccccc........
+    .....ee...ee.......6.e..11..e......88888..6.......................cccccc........
     ..............33...6.e..11..e......88888..6..........77..5...aaa.............fff
     ..............33..............99...88888.........77..77......aaa.............fff
     ...eeee22ee...33.......eeee...99...88888.........77..........aaa.............fff
-    ...eeee22ee...33.......eeee...99...88888....dd...............aaa.............fff
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbddbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    ...eeee22ee...33.......eeee...99...88888.....................aaa.............fff
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 """))
 scene.set_tile(1, img("""
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
@@ -371,6 +339,24 @@ scene.set_tile(12, img("""
     d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 """), True)
+scene.set_tile(13, img("""
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    d 1 d d d d d d d 1 d d d d d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    d d d d d 1 d d d d d d d 1 d d
+    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+"""), True)
 scene.set_tile(14, img("""
     e e e e e e e e e e e e e e e e
     e e e e e e e e e e e e e e e e
@@ -463,7 +449,43 @@ scene.set_tile(15, img("""
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 """))
+
+# player setup
+cat = sprites.create(img("""
+    . . . . . . . . . . . . . .
+    e e e . . . . e e e . . . .
+    c d d c . . c d d c . . . .
+    c b d d f f d d b c . . . .
+    c 3 b d d b d b 3 c . . . .
+    f b 3 d d d d 3 b f . . . .
+    e d d d d d d d d e . . . .
+    e d f d d d d f d e b f b .
+    f d d f d d f d d f f d f .
+    f b d d b b d d 2 b f d f .
+    . f 2 2 2 2 2 2 d b d b f .
+    . f d d d d d d d f f f . .
+    . f d b d f f f d f . . . .
+    . . f f f f . . f f . . . .
+"""), SpriteKind.player)
+scene.camera_follow_sprite(cat)
+cat.ay = 300
 tiles.place_on_tile(cat, tiles.get_tile_location(0, 8))
+#Player controls
+
+controller.move_sprite(cat, 100, 0)
+double_jump = True
+def jump():
+    global double_jump
+    if double_jump:
+        cat.vy = -140
+        double_jump = cat.is_hitting_tile(CollisionDirection.BOTTOM)
+controller.A.on_event(ControllerButtonEvent.PRESSED, jump)
+def on_update():
+    global double_jump
+    if cat.is_hitting_tile(CollisionDirection.Bottom):
+        double_jump = True
+game.on_update(on_update)
+
 
 
 # powerup one
@@ -522,28 +544,29 @@ def on_hit_tile(sprite):
 scene.on_hit_tile(SpriteKind.player, 2, on_hit_tile)
 
 
-# dog = sprites.create(img("""
-#     . . 4 4 4 . . . . 4 4 4 . . . .
-#     . 4 5 5 5 e . . e 5 5 5 4 . . .
-#     4 5 5 5 5 5 e e 5 5 5 5 5 4 . .
-#     4 5 5 4 4 5 5 5 5 4 4 5 5 4 . .
-#     e 5 4 4 5 5 5 5 5 5 4 4 5 e . .
-#     . e e 5 5 5 5 5 5 5 5 e e . . .
-#     . . e 5 f 5 5 5 5 f 5 e . . . .
-#     . . f 5 5 5 4 4 5 5 5 f . . f f
-#     . . f 4 5 5 f f 5 5 6 f . f 5 f
-#     . . . f 6 6 6 6 6 6 4 4 f 5 5 f
-#     . . . f 4 5 5 5 5 5 5 4 4 5 f .
-#     . . . f 5 5 5 5 5 4 5 5 f f . .
-#     . . . f 5 f f f 5 f f 5 f . . .
-#     . . . f f . . f f . . f f . . .
-# """))
-# dog.set_kind(SpriteKind.enemy)
-# dog.ay = 300
-#tiles.place_on_tile(dog, tiles.get_tile_location(44, 8))
-# def on_overlap_tile(sprite, location):
-#     dog.follow(cat)
+dog = sprites.create(img("""
+    . . 4 4 4 . . . . 4 4 4 . . . .
+    . 4 5 5 5 e . . e 5 5 5 4 . . .
+    4 5 5 5 5 5 e e 5 5 5 5 5 4 . .
+    4 5 5 4 4 5 5 5 5 4 4 5 5 4 . .
+    e 5 4 4 5 5 5 5 5 5 4 4 5 e . .
+    . e e 5 5 5 5 5 5 5 5 e e . . .
+    . . e 5 f 5 5 5 5 f 5 e . . . .
+    . . f 5 5 5 4 4 5 5 5 f . . f f
+    . . f 4 5 5 f f 5 5 6 f . f 5 f
+    . . . f 6 6 6 6 6 6 4 4 f 5 5 f
+    . . . f 4 5 5 5 5 5 5 4 4 5 f .
+    . . . f 5 5 5 5 5 4 5 5 f f . .
+    . . . f 5 f f f 5 f f 5 f . . .
+    . . . f f . . f f . . f f . . .
+"""))
+dog.set_kind(SpriteKind.enemy)
+dog.ay = 300
+tiles.place_on_tile(dog, tiles.get_tile_location(44, 8))
 
-# scene.on_overlap_tile(SpriteKind.player, tiles.get_tile_location(46, 8), on_overlap_tile)
+def on_hit_tile2(cat):
+    dog.follow(cat)
+scene.on_hit_tile(SpriteKind.player, 13 , on_hit_tile2)
+
 
 # win/lose effect
