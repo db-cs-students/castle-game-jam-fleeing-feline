@@ -135,12 +135,13 @@ scene.set_tile_map(img("""
     ...................6......................6.....................................
     ...................6......................6.....................................
     .....ee...ee.......6.e..11..e......88888..6.......................cccccc........
-    ..............33...6.e..11..e......88888..6..........77..5...aaa.............fff
+    ..............33...6.e..11..e......88888..6..........77......aaa.............fff
     ..............33..............99...88888.........77..77......aaa.............fff
-    ...eeee..ee...33.......eeee...99...88888.........77..........aaa.............fff
-    ...eeee..ee...33.......eeee...99...88888.....................aaa.............fff
+    ...e5e522e5...33.......e5e5...99...88888.........77..........aaa.............fff
+    ...e5e522e5...33.......e5e5...99...88888.....................aaa.............fff
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 """))
+
 scene.set_tile(1, img("""
     ................................
     ................................
@@ -211,24 +212,80 @@ mirror = sprites.create(img("""
 """))
 mirror.set_flag(SpriteFlag.SHOW_PHYSICS, True)
 mirror.set_position(400, 79)
+
+scene.set_tile(2, img("""
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+"""), True)
 oven = sprites.create(img("""
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-"""))
+    dddddddddddddddddddddddddddddddd
+    d111111111111111111111111111111d
+    d11bb11bb111ffffffff111bb11bb11d
+    d11bb11bb111ffffffff111bb11bb11d
+    d111111111111111111111111111111d
+    dddddddddddddddddddddddddddddddd
+    dddddddddddddddddddddddddddddddd
+    ddd222222222ddddddd2222222222ddd
+    dddddddddddddddddddddddddddddddd
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d11cccccccccccccccccccccccccc11d
+    d11cccccccccccccccccccccccccc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11cccccccccccccccccccccccccc11d
+    d11cccccccccccccccccccccccccc11d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    dddddddddddddddddddddddddddddddd
+"""), SpriteKind.projectile)
+oven.set_position(128, 128)
+def on_hit_oven(sprite):
+    game.over(False)
+scene.on_hit_tile(SpriteKind.player, 2, on_hit_oven)
+
 scene.set_tile(3, img("""
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
@@ -567,29 +624,29 @@ def on_overlap(sprite, otherSprite):
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap)
 
 # Powerup two
-powerup2 = sprites.create(img("""
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . 2 2 2 2 2 . . . . . .
-    . . . . 2 2 2 2 2 2 2 . . . . .
-    . . . . 2 2 2 2 2 2 2 . . . . .
-    . . . . 2 2 2 2 2 2 2 . . . . .
-    . . . . 2 2 2 2 2 2 2 . . . . .
-    . . . . 2 2 2 2 2 2 2 . . . . .
-    . . . . . 2 2 2 2 2 . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-"""), SpriteKind.projectile)
-tiles.place_on_tile(powerup2, tiles.get_tile_location(57, 4))
+# powerup2 = sprites.create(img("""
+#     . . . . . . . . . . . . . . . .
+#     . . . . . . . . . . . . . . . .
+#     . . . . . . . . . . . . . . . .
+#     . . . . . 2 2 2 2 2 . . . . . .
+#     . . . . 2 2 2 2 2 2 2 . . . . .
+#     . . . . 2 2 2 2 2 2 2 . . . . .
+#     . . . . 2 2 2 2 2 2 2 . . . . .
+#     . . . . 2 2 2 2 2 2 2 . . . . .
+#     . . . . 2 2 2 2 2 2 2 . . . . .
+#     . . . . . 2 2 2 2 2 . . . . . .
+#     . . . . . . . . . . . . . . . .
+#     . . . . . . . . . . . . . . . .
+#     . . . . . . . . . . . . . . . .
+#     . . . . . . . . . . . . . . . .
+#     . . . . . . . . . . . . . . . .
+#     . . . . . . . . . . . . . . . .
+# """), SpriteKind.projectile)
+# tiles.place_on_tile(powerup2, tiles.get_tile_location(57, 4))
 
-def on_overlap2(sprite, otherSprite):
-    otherSprite.destroy(effects.cool_radial, )
-sprites.on_overlap(SpriteKind.player, SpriteKind.projectile, on_overlap2)
+# def on_overlap2(sprite, otherSprite):
+#     otherSprite.destroy(effects.cool_radial, )
+# sprites.on_overlap(SpriteKind.player, SpriteKind.projectile, on_overlap2)
 
 # enemies setup
 def on_hit_tile(sprite):

@@ -134,10 +134,10 @@ scene.setTileMap(img`
     ...................6......................6.....................................
     ...................6......................6.....................................
     .....ee...ee.......6.e..11..e......88888..6.......................cccccc........
-    ..............33...6.e..11..e......88888..6..........77..5...aaa.............fff
+    ..............33...6.e..11..e......88888..6..........77......aaa.............fff
     ..............33..............99...88888.........77..77......aaa.............fff
-    ...eeee..ee...33.......eeee...99...88888.........77..........aaa.............fff
-    ...eeee..ee...33.......eeee...99...88888.....................aaa.............fff
+    ...e5e522e5...33.......e5e5...99...88888.........77..........aaa.............fff
+    ...e5e522e5...33.......e5e5...99...88888.....................aaa.............fff
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 `)
 scene.setTile(1, img`
@@ -210,24 +210,78 @@ let mirror = sprites.create(img`
 `)
 mirror.setFlag(SpriteFlag.ShowPhysics, true)
 mirror.setPosition(400, 79)
+scene.setTile(2, img`
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+`, true)
 let oven = sprites.create(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`)
+    dddddddddddddddddddddddddddddddd
+    d111111111111111111111111111111d
+    d11bb11bb111ffffffff111bb11bb11d
+    d11bb11bb111ffffffff111bb11bb11d
+    d111111111111111111111111111111d
+    dddddddddddddddddddddddddddddddd
+    dddddddddddddddddddddddddddddddd
+    ddd222222222ddddddd2222222222ddd
+    dddddddddddddddddddddddddddddddd
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d11cccccccccccccccccccccccccc11d
+    d11cccccccccccccccccccccccccc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11ccffffffffffffffffffffffcc11d
+    d11cccccccccccccccccccccccccc11d
+    d11cccccccccccccccccccccccccc11d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    dddddddddddddddddddddddddddddddd
+`, SpriteKind.Projectile)
+oven.setPosition(128, 128)
+scene.onHitTile(SpriteKind.Player, 2, function on_hit_oven(sprite: Sprite) {
+    game.over(false)
+})
 scene.setTile(3, img`
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
@@ -562,28 +616,28 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap(sprite
     otherSprite.destroy(effects.coolRadial, 100)
 })
 //  Powerup two
-let powerup2 = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . 2 2 2 2 2 . . . . . .
-    . . . . 2 2 2 2 2 2 2 . . . . .
-    . . . . 2 2 2 2 2 2 2 . . . . .
-    . . . . 2 2 2 2 2 2 2 . . . . .
-    . . . . 2 2 2 2 2 2 2 . . . . .
-    . . . . 2 2 2 2 2 2 2 . . . . .
-    . . . . . 2 2 2 2 2 . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-`, SpriteKind.Projectile)
-tiles.placeOnTile(powerup2, tiles.getTileLocation(57, 4))
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
-    otherSprite.destroy(effects.coolRadial)
-})
+//  powerup2 = sprites.create(img("""
+//      . . . . . . . . . . . . . . . .
+//      . . . . . . . . . . . . . . . .
+//      . . . . . . . . . . . . . . . .
+//      . . . . . 2 2 2 2 2 . . . . . .
+//      . . . . 2 2 2 2 2 2 2 . . . . .
+//      . . . . 2 2 2 2 2 2 2 . . . . .
+//      . . . . 2 2 2 2 2 2 2 . . . . .
+//      . . . . 2 2 2 2 2 2 2 . . . . .
+//      . . . . 2 2 2 2 2 2 2 . . . . .
+//      . . . . . 2 2 2 2 2 . . . . . .
+//      . . . . . . . . . . . . . . . .
+//      . . . . . . . . . . . . . . . .
+//      . . . . . . . . . . . . . . . .
+//      . . . . . . . . . . . . . . . .
+//      . . . . . . . . . . . . . . . .
+//      . . . . . . . . . . . . . . . .
+//  """), SpriteKind.projectile)
+//  tiles.place_on_tile(powerup2, tiles.get_tile_location(57, 4))
+//  def on_overlap2(sprite, otherSprite):
+//      otherSprite.destroy(effects.cool_radial, )
+//  sprites.on_overlap(SpriteKind.player, SpriteKind.projectile, on_overlap2)
 //  enemies setup
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
     game.over()
