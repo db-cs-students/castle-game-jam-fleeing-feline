@@ -138,7 +138,7 @@ scene.setTileMap(img`
     ..............33..............33...88888.........77..........aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb44
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb44
 `)
 // mirror
 scene.setTile(1, img`
@@ -905,6 +905,9 @@ dog.ay = 300
 scene.onHitTile(SpriteKind.Player, 13, function on_hit_tile2(cat: Sprite) {
     // dog image change
     dog.follow(cat, 85)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
+    game.over()
 })
 //  win/lose effect
 scene.onHitTile(SpriteKind.Player, 4, function on_outside(sprite: Sprite) {

@@ -139,7 +139,7 @@ scene.set_tile_map(img("""
     ..............33..............33...88888.........77..........aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb44
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb44
 """))
 
 #mirror
@@ -929,6 +929,9 @@ def on_hit_tile2(cat):
     dog.follow(cat, 85)
 scene.on_hit_tile(SpriteKind.player, 13 , on_hit_tile2)
 
+def on_overlap2(sprite, otherSprite):
+    game.over()
+sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_overlap2)
 
 
 # win/lose effect
