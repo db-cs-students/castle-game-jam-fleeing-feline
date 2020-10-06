@@ -389,22 +389,22 @@ scene.setTile(4, img`
 `, true)
 // Cabinet
 scene.setTile(5, img`
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
-    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
 `, true)
 scene.setTile(14, img`
     f e e e e e e e e e e e e e e f
@@ -480,6 +480,7 @@ scene.setTile(8, img`
     d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 `, true)
+// Toilet
 scene.setTile(9, img`
     d 1 d d d d d d d 1 d d d d d d
     d 1 d d d d d d d 1 d d d d d d
@@ -498,23 +499,24 @@ scene.setTile(9, img`
     d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 `, true)
+// bookshelf
 scene.setTile(10, img`
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e e e e e e e e e e e e
+    e e e e e 7 7 7 e e e e e 2 2 2
+    5 5 5 e e 7 6 7 e e e 4 4 2 2 2
+    5 4 5 a a 7 6 7 9 9 9 4 4 2 2 2
+    5 4 5 a a 7 6 7 9 8 9 4 4 2 2 2
+    5 4 5 a a 7 6 7 9 8 9 4 4 2 2 2
+    5 4 5 a a 7 6 7 9 8 9 4 4 2 2 2
+    5 4 5 a a 7 6 7 9 8 9 4 4 2 2 2
+    5 4 5 a a 7 6 7 9 8 9 4 4 2 2 2
+    5 5 5 a a 7 7 7 9 9 9 4 4 2 2 2
+    f f f f f f f f f f f f f f f f
+    e e e e e e e e e e e e e e e e
+    f f f f f f f f f f f f f f f f
 `, true)
 scene.setTile(11, img`
     c a c c c c c c c a c c c c c c
@@ -535,22 +537,22 @@ scene.setTile(11, img`
     a a a a a a a a a a a a a a a a
 `, true)
 scene.setTile(12, img`
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
 `, true)
 scene.setTile(13, img`
     d 1 d d d d d d d 1 d d d d d d
