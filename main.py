@@ -471,25 +471,108 @@ scene.set_tile(7, img("""
     e e e e e e e e e e e e e e e e
 """), True)
 
+#Shower
 scene.set_tile(8, img("""
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
 """), True)
-
+shower = sprites.create(img("""
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffddcccccccccccccddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffddcccccccccccccddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffddcccccccccccccddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffddcccdddddddcccddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffddcccdddddcccccddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffddcccddddccccccccccddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffddcccddddccccccccccccddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffddcccddddcccccaaaccccddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffddcccddddccaaaaaaaaccddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffddcccddddccaaaaaaaaccddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdccccdddddcaaaaaaaaccddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdccccddd9dddcaaaaaacdddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdccccddd9ddddd9ddd9999dddddddddddddddd99dddddddddddddddddddddddddddddddddddff
+    fffdcccddddd9dddddddd9dddddddddddddd999999ddddddddddddddddddddddddddddddddddddff
+    fffdcccddddd9dddddddd9ddddddddddddddddddddddd9ddddddddddddddddddddddddddddddddff
+    fffccccddddd99dddddddd9dddddddddddddddddddddd9ddddddddddddddddddddddddddddddddff
+    fffccccdddddd9ddd9dddd99ddddddddddddddddddddd9ddddddddddddddddddd99dddddddddddff
+    fffccccddddddddddd9dddddddddddddddddddddddddd9ddddddddddddd9dddddd99ddddddddddff
+    fffccffffddddddddd9dddddddddddddddddddddddddd9ddddddddddddd9ddddddd9ddddddddddff
+    fffcfffffdddddddddd9ddddddddddddddddddddddddd9ddddddddddddd9ddddddd9ddddddddddff
+    fffcfffffddddddddddd9ddddddddddddddd9dddddddd9ddddddddddddd9ddddddddddddddddddff
+    fffcfffffddddddddddd99dddddddddddddd99dddddd9dddddddddddddd9ddddddddddddddddddff
+    fffcfffffdddddddddddd9ddddddddddddddd9dddddd9dddddddddddddddddddddddddddddddddff
+    ffccfffffddddd9ddddddd9ddddddddddddddd9dddddddddddddddddddddddddddddddddddddddff
+    ffccfffffddddd9ddddddd99dddddddddddddd9dddddddddddddddddddddddddddddddddddddddff
+    ffccffffdddddd9d9dddddd9dd99dddddddddd9ddddddddddddddddddd9dddddddddddddddddddff
+    ffcccccddddddd9dddddddddddd999dddddddd9ddddddddddddddddddd9dddddddddddddddddddff
+    ffcccccddddddd9dddddddddddddd9dddddddddddddddddddddddddddd9dddddddddddddddddddff
+    ffcccccddddddd9ddddddddddddd9999ddddddddddddddddddddddddd99dddddddddddddddddddff
+    ffcccccddddddd9d9dddddddddddddddddddddddddddddddddddddddd9ddddddd9ddddddddddddff
+    ffcccccddddddd9d9dddddddddddddddddddddddddddddddddddddddd9ddddddd9ddddddddddddff
+    ffcccccddddddddd9ddddddddddddddddddddddddddddddddddddddd9dddddddd9ddddddddddddff
+    ffcccccddddddddddddd9dddddddddddddddddddddddddddddddddddddddddddd9ddddddddddddff
+    ffcccccddddddddddddd9ddddddddddddddddd99ddddddddddddddddddddddddd9ddddddddddddff
+    ffcccccdddddddddddddd9dddddddddddddddd9d999ddddddddddddddddddddd9dddddddddddddff
+    ffccccccddddddddddddd9dddddddddddddddd9dddd99ddddddddddddddddddd9dddddddddddddff
+    ffccccccdddddddddddddd99dddddddddddddd9ddddd999dddddddddddddddd9ddddddddddddddff
+    ffccccccddddddddd9dddddd999ddddddddddd9dddddddddddddddddddddddddddddddddddddddff
+    fffcccccddddddddd99ddd9dddd999dddddddd9dddddddddddddddddddddddddddddddddddddddff
+    fffcccccdddddddddd9dddd9dddddd99ddddddddddddddddd9ddddddddddddddddddddddddddddff
+    fffddddddddddddddd9dddd9ddddddddddddddddddddddd999ddddddddddddddddddddddddddddff
+    fffddddddddddddddd9dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffddddddddddddddd9ddddddddddddddddddddddddddddddddddddddddd9dddddddddddddddddff
+    fffddddddddddddddd9dddddddd9dddddddddd9dddddddddddddddddddd99dddddddddddddddddff
+    fffddddddddddddddd9ddddddddd9ddddddddd9ddddddddddddddddddd99ddddddddddddddddddff
+    fffddddddddddddddddddddddddd99dddddddd9dddddddddddddddddddddddddddddddddddddddff
+    fffddddddddddddddddddddddddddd9ddddddd9dddd9ddddddddddddddddddddddddddddddddddff
+    fffddddddddddddddddddddddddddd9ddddddd9d9999dddddddddddddddd9dddddddddddddddddff
+    fffddddddddddddddddddddddddddd9ddddd9999dddd9dddddddddddddddd99dddddddddddddddff
+    fffdddddddddddddddddddddddddddd9ddddddddddddd9dddddddddddddddd9dddddddddddddddff
+    fffddddddddddddddddddddddddddddddddddddddddddd99ddddddddddddddddddddddddddddddff
+    fffddddddddddddddddd9d9999dddddddddddddddddddddd9ddddddddddddddddd9dddddddddddff
+    fffdddddddddddddddddd9ddddddddddddddddddddddddddd99ddddddddddddddd99ddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd99dddddddddff
+    fffdddddddddddddddddddddddddddddddd9ddddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddd999ddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddd9999999ddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddd99dddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    fffdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+"""))
+shower.set_position(600, 104)
 #Toilet
 scene.set_tile(3, img("""
     . . . . . . . . . . . . . . . .
@@ -559,7 +642,6 @@ toilet = sprites.create(img("""
     ....dddddd111111111111111111....
     ....dddddddddddddddddddd1111....
 """))
-toilet.set_flag(SpriteFlag.SHOW_PHYSICS, True)
 toilet.set_position(495, 120)
 
 #bookshelf
