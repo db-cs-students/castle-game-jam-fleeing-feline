@@ -140,6 +140,7 @@ scene.setTileMap(img`
     ...e5e522e5...33.......e5e5...99...88888.....................aaa.............fff
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 `)
+// mirror
 scene.setTile(1, img`
     ................................
     ................................
@@ -208,8 +209,8 @@ let mirror = sprites.create(img`
     eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
     eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 `)
-mirror.setFlag(SpriteFlag.ShowPhysics, true)
 mirror.setPosition(400, 79)
+// oven
 scene.setTile(2, img`
     ................................
     ................................
@@ -261,15 +262,15 @@ let oven = sprites.create(img`
     d11cccccccccccccccccccccccccc11d
     d11ccffffffffffffffffffffffcc11d
     d11ccffffffffffffffffffffffcc11d
+    d11ccff222222222222222222ffcc11d
     d11ccffffffffffffffffffffffcc11d
     d11ccffffffffffffffffffffffcc11d
     d11ccffffffffffffffffffffffcc11d
+    d11ccff222222222222222222ffcc11d
     d11ccffffffffffffffffffffffcc11d
     d11ccffffffffffffffffffffffcc11d
     d11ccffffffffffffffffffffffcc11d
-    d11ccffffffffffffffffffffffcc11d
-    d11ccffffffffffffffffffffffcc11d
-    d11ccffffffffffffffffffffffcc11d
+    d11ccff222222222222222222ffcc11d
     d11ccffffffffffffffffffffffcc11d
     d11ccffffffffffffffffffffffcc11d
     d11cccccccccccccccccccccccccc11d
@@ -282,6 +283,7 @@ oven.setPosition(128, 128)
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_oven(sprite: Sprite) {
     game.over(false)
 })
+// fridge
 scene.setTile(3, img`
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
@@ -300,6 +302,73 @@ scene.setTile(3, img`
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 `, true)
+let fridge = sprites.create(img`
+    dddddddddddddddddddddddddddddddd
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d1111111111111111111111111fff11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111122211111111111111f1f11d
+    d1111111121211111111111111f1f11d
+    d1111111122111111111111111f1f11d
+    d1111111121211111111111111f1f11d
+    d1111111122211111aaa111111f1f11d
+    d1166611111111111a1a111111f1f11d
+    d1161611111111111a11111111f1f11d
+    d1166611111111111aaa111111f1f11d
+    d1161611111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111fff11d
+    d111111111111111111111111111111d
+    dffffffffffffffffffffffffffffffd
+    dddddddddddddddddddddddddddddddd
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d1111111111111111111111111fff11d
+    d1111111111111111111111111f1f11d
+    d1111411411111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111411411111111111111111f1f11d
+    d1111144111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111fff11d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    ffffffffffffffffffffffffffffffff
+`)
+fridge.setPosition(240, 112)
 scene.setTile(4, img`
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
@@ -318,42 +387,116 @@ scene.setTile(4, img`
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
 `, true)
+// Cabinet
+scene.setTile(5, img`
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+`, true)
+scene.setTile(14, img`
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+`, true)
+// room separation
 scene.setTile(6, img`
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
 `, true)
+// library shelves
 scene.setTile(7, img`
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 `, true)
+let shelf = sprites.create(img`
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    22222...........................
+    22222....bbbbb..................
+    22222....bbbbb..............5555
+    22222....bbbbb..8888........5555
+    222227777bbbbb9988888.......5555
+    222227777bbbbb99888888......5555
+    222227777bbbbb99888888......5555
+    222227777bbbbb999888888.....5555
+    222227777bbbbb999.888888....5555
+    222227777bbbbb999.8888888...5555
+    222227777bbbbb999..8888888..5555
+    222227777bbbbb999eeee888888e5555
+    222227777bbbbb999eeeee8888885555
+    222227777bbbbb999eeeee8888885555
+    222227777bbbbb999eeeeee888885555
+    222227777bbbbb999eeeeeee88885555
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    ffffffffffffffffffffffffffffffff
+`)
+fridge.setFlag(SpriteFlag.StayInScreen, false)
 scene.setTile(8, img`
     d 1 d d d d d d d 1 d d d d d d
     d 1 d d d d d d d 1 d d d d d d
@@ -461,24 +604,6 @@ scene.setTile(13, img`
     d d d d d 1 d d d d d d d 1 d d
     d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-`, true)
-scene.setTile(14, img`
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
 `, true)
 scene.setTile(15, img`
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff

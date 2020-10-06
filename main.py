@@ -142,6 +142,7 @@ scene.set_tile_map(img("""
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 """))
 
+#mirror
 scene.set_tile(1, img("""
     ................................
     ................................
@@ -210,9 +211,9 @@ mirror = sprites.create(img("""
     eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
     eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 """))
-mirror.set_flag(SpriteFlag.SHOW_PHYSICS, True)
 mirror.set_position(400, 79)
 
+#oven
 scene.set_tile(2, img("""
     ................................
     ................................
@@ -264,15 +265,15 @@ oven = sprites.create(img("""
     d11cccccccccccccccccccccccccc11d
     d11ccffffffffffffffffffffffcc11d
     d11ccffffffffffffffffffffffcc11d
+    d11ccff222222222222222222ffcc11d
     d11ccffffffffffffffffffffffcc11d
     d11ccffffffffffffffffffffffcc11d
     d11ccffffffffffffffffffffffcc11d
+    d11ccff222222222222222222ffcc11d
     d11ccffffffffffffffffffffffcc11d
     d11ccffffffffffffffffffffffcc11d
     d11ccffffffffffffffffffffffcc11d
-    d11ccffffffffffffffffffffffcc11d
-    d11ccffffffffffffffffffffffcc11d
-    d11ccffffffffffffffffffffffcc11d
+    d11ccff222222222222222222ffcc11d
     d11ccffffffffffffffffffffffcc11d
     d11ccffffffffffffffffffffffcc11d
     d11cccccccccccccccccccccccccc11d
@@ -286,6 +287,7 @@ def on_hit_oven(sprite):
     game.over(False)
 scene.on_hit_tile(SpriteKind.player, 2, on_hit_oven)
 
+#fridge
 scene.set_tile(3, img("""
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
@@ -304,6 +306,74 @@ scene.set_tile(3, img("""
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
     3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 """), True)
+fridge = sprites.create(img("""
+    dddddddddddddddddddddddddddddddd
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d1111111111111111111111111fff11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111122211111111111111f1f11d
+    d1111111121211111111111111f1f11d
+    d1111111122111111111111111f1f11d
+    d1111111121211111111111111f1f11d
+    d1111111122211111aaa111111f1f11d
+    d1166611111111111a1a111111f1f11d
+    d1161611111111111a11111111f1f11d
+    d1166611111111111aaa111111f1f11d
+    d1161611111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111fff11d
+    d111111111111111111111111111111d
+    dffffffffffffffffffffffffffffffd
+    dddddddddddddddddddddddddddddddd
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d1111111111111111111111111fff11d
+    d1111111111111111111111111f1f11d
+    d1111411411111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111411411111111111111111f1f11d
+    d1111144111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111f1f11d
+    d1111111111111111111111111fff11d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    d111111111111111111111111111111d
+    ffffffffffffffffffffffffffffffff
+"""))
+fridge.set_position(240, 112)
+
 scene.set_tile(4, img("""
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
@@ -322,42 +392,119 @@ scene.set_tile(4, img("""
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
     4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4
 """), True)
+
+#Cabinet
+scene.set_tile(5, img("""
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+    f e e e e e e e e e e e e e f .
+"""), True)
+scene.set_tile(14, img("""
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+    f e e e e e e e e e e e e e e f
+"""), True)
+
+#room separation
 scene.set_tile(6, img("""
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
 """), True)
+
+#library shelves
 scene.set_tile(7, img("""
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 """), True)
+shelf = sprites.create(img("""
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    ................................
+    22222...........................
+    22222....bbbbb..................
+    22222....bbbbb..............5555
+    22222....bbbbb..8888........5555
+    222227777bbbbb9988888.......5555
+    222227777bbbbb99888888......5555
+    222227777bbbbb99888888......5555
+    222227777bbbbb999888888.....5555
+    222227777bbbbb999.888888....5555
+    222227777bbbbb999.8888888...5555
+    222227777bbbbb999..8888888..5555
+    222227777bbbbb999eeee888888e5555
+    222227777bbbbb999eeeee8888885555
+    222227777bbbbb999eeeee8888885555
+    222227777bbbbb999eeeeee888885555
+    222227777bbbbb999eeeeeee88885555
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    ffffffffffffffffffffffffffffffff
+"""))
+fridge.set_flag(, False)
 scene.set_tile(8, img("""
     d 1 d d d d d d d 1 d d d d d d
     d 1 d d d d d d d 1 d d d d d d
@@ -376,6 +523,7 @@ scene.set_tile(8, img("""
     d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 """), True)
+
 scene.set_tile(9, img("""
     d 1 d d d d d d d 1 d d d d d d
     d 1 d d d d d d d 1 d d d d d d
@@ -394,6 +542,7 @@ scene.set_tile(9, img("""
     d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 """), True)
+
 scene.set_tile(10, img("""
     d 1 d d d d d d d 1 d d d d d d
     d 1 d d d d d d d 1 d d d d d d
@@ -412,6 +561,7 @@ scene.set_tile(10, img("""
     d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 """), True)
+
 scene.set_tile(11, img("""
     c a c c c c c c c a c c c c c c
     c a c c c c c c c a c c c c c c
@@ -430,6 +580,7 @@ scene.set_tile(11, img("""
     c c c c c a c c c c c c c a c c
     a a a a a a a a a a a a a a a a
 """), True)
+
 scene.set_tile(12, img("""
     d 1 d d d d d d d 1 d d d d d d
     d 1 d d d d d d d 1 d d d d d d
@@ -448,6 +599,7 @@ scene.set_tile(12, img("""
     d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 """), True)
+
 scene.set_tile(13, img("""
     d 1 d d d d d d d 1 d d d d d d
     d 1 d d d d d d d 1 d d d d d d
@@ -466,24 +618,7 @@ scene.set_tile(13, img("""
     d d d d d 1 d d d d d d d 1 d d
     1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 """), True)
-scene.set_tile(14, img("""
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-"""), True)
+
 scene.set_tile(15, img("""
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
