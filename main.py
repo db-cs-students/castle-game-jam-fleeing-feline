@@ -135,11 +135,11 @@ scene.set_tile_map(img("""
     ...................6......................6.....................................
     ...................6......................6.....................................
     .....ee...ee.......6.e..11..e......88888..6.......................cccccc........
-    ..............33...6.e..11..e......88888..6..........77......aaa.............fff
-    ..............33..............33...88888.........77..........aaa.............fff
-    ...e5e522e5...33.......e5e5...33...88888.....................aaa.............fff
-    ...e5e522e5...33.......e5e5...33...88888.....................aaa.............fff
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    ..............33...6.e..11..e......88888..6..........77......aaa.............ff9
+    ..............33..............33...88888.........77..........aaa.............ff9
+    ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
+    ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb44
 """))
 
 #mirror
@@ -573,6 +573,7 @@ shower = sprites.create(img("""
     ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 """))
 shower.set_position(600, 104)
+
 #Toilet
 scene.set_tile(3, img("""
     . . . . . . . . . . . . . . . .
@@ -703,98 +704,135 @@ scene.set_tile(12, img("""
 """), True)
 
 scene.set_tile(13, img("""
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
 """), True)
 
+#Door
 scene.set_tile(15, img("""
-    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
-    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
-    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
-    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
-    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
-    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 """))
+scene.set_tile(9, img("""
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+"""))
+scene.set_tile(4, img("""
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
+"""), True)
 
 # player setup
 cat = sprites.create(img("""
@@ -918,3 +956,6 @@ scene.on_hit_tile(SpriteKind.player, 13 , on_hit_tile2)
 
 
 # win/lose effect
+def on_outside(sprite):
+    game.over(True)
+scene.on_hit_tile(SpriteKind.player, 4, on_outside)

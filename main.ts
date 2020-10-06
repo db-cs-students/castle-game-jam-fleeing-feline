@@ -134,11 +134,11 @@ scene.setTileMap(img`
     ...................6......................6.....................................
     ...................6......................6.....................................
     .....ee...ee.......6.e..11..e......88888..6.......................cccccc........
-    ..............33...6.e..11..e......88888..6..........77......aaa.............fff
-    ..............33..............33...88888.........77..........aaa.............fff
-    ...e5e522e5...33.......e5e5...33...88888.....................aaa.............fff
-    ...e5e522e5...33.......e5e5...33...88888.....................aaa.............fff
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    ..............33...6.e..11..e......88888..6..........77......aaa.............ff9
+    ..............33..............33...88888.........77..........aaa.............ff9
+    ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
+    ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb44
 `)
 // mirror
 scene.setTile(1, img`
@@ -690,97 +690,134 @@ scene.setTile(12, img`
     a a a a a a a a a a a a a a a a
 `, true)
 scene.setTile(13, img`
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    d 1 d d d d d d d 1 d d d d d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    d d d d d 1 d d d d d d d 1 d d
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
 `, true)
+// Door
 scene.setTile(15, img`
-    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
-    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
-    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
-    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
-    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
-    fffffdddddddddddddddddddddddddddddddddddddddddddddddbbbbbddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    fffffddddddddddddddddddddddddddddddddddddddddddddddddddddddddfff
-    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+    eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 `)
+scene.setTile(9, img`
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+    f f 9 9 9 9 9 9 9 9 9 9 9 9 9 9
+`)
+scene.setTile(4, img`
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
+`, true)
 //  player setup
 let cat = sprites.create(img`
     . . . . . . . . . . . . . .
@@ -890,4 +927,8 @@ dog.setKind(SpriteKind.Enemy)
 dog.ay = 300
 scene.onHitTile(SpriteKind.Player, 13, function on_hit_tile2(cat: Sprite) {
     dog.follow(cat, 85)
+})
+//  win/lose effect
+scene.onHitTile(SpriteKind.Player, 4, function on_outside(sprite: Sprite) {
+    game.over(true)
 })
