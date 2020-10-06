@@ -496,7 +496,7 @@ let shelf = sprites.create(img`
     eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
     ffffffffffffffffffffffffffffffff
 `)
-fridge.setFlag(SpriteFlag.StayInScreen, false)
+shelf.setFlag(SpriteFlag.ShowPhysics, true)
 scene.setTile(8, img`
     d 1 d d d d d d d 1 d d d d d d
     d 1 d d d d d d d 1 d d d d d d

@@ -504,7 +504,7 @@ shelf = sprites.create(img("""
     eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
     ffffffffffffffffffffffffffffffff
 """))
-fridge.set_flag(, False)
+shelf.set_flag(SpriteFlag.SHOW_PHYSICS, True)
 scene.set_tile(8, img("""
     d 1 d d d d d d d 1 d d d d d d
     d 1 d d d d d d d 1 d d d d d d
