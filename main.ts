@@ -138,7 +138,7 @@ scene.setTileMap(img`
     ..............33..............33...88888.........77..........aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb44
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb44
 `)
 // mirror
 scene.setTile(1, img`
@@ -690,22 +690,22 @@ scene.setTile(12, img`
     a a a a a a a a a a a a a a a a
 `, true)
 scene.setTile(13, img`
-    c a c c c c c c c a c c c c c c
-    c a c c c c c c c a c c c c c c
-    c a c c c c c c c a c c c c c c
-    a a a a a a a a a a a a a a a a
-    c c c c c a c c c c c c c a c c
-    c c c c c a c c c c c c c a c c
-    c c c c c a c c c c c c c a c c
-    a a a a a a a a a a a a a a a a
-    c a c c c c c c c a c c c c c c
-    c a c c c c c c c a c c c c c c
-    c a c c c c c c c a c c c c c c
-    a a a a a a a a a a a a a a a a
-    c c c c c a c c c c c c c a c c
-    c c c c c a c c c c c c c a c c
-    c c c c c a c c c c c c c a c c
-    a a a a a a a a a a a a a a a a
+    c 3 c c c c c c c 3 c c c c c c
+    c 3 c c c c c c c 3 c c c c c c
+    c 3 c c c c c c c 3 c c c c c c
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    c c c c c 3 c c c c c c c 3 c c
+    c c c c c 3 c c c c c c c 3 c c
+    c c c c c 3 c c c c c c c 3 c c
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    c 3 c c c c c c c 3 c c c c c c
+    c 3 c c c c c c c 3 c c c c c c
+    c 3 c c c c c c c 3 c c c c c c
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    c c c c c 3 c c c c c c c 3 c c
+    c c c c c 3 c c c c c c c 3 c c
+    c c c c c 3 c c c c c c c 3 c c
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 `, true)
 // Door
 scene.setTile(15, img`
@@ -879,29 +879,6 @@ tiles.placeOnTile(powerup1, tiles.getTileLocation(10, 6))
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy(effects.coolRadial, 100)
 })
-//  Powerup two
-//  powerup2 = sprites.create(img("""
-//      . . . . . . . . . . . . . . . .
-//      . . . . . . . . . . . . . . . .
-//      . . . . . . . . . . . . . . . .
-//      . . . . . 2 2 2 2 2 . . . . . .
-//      . . . . 2 2 2 2 2 2 2 . . . . .
-//      . . . . 2 2 2 2 2 2 2 . . . . .
-//      . . . . 2 2 2 2 2 2 2 . . . . .
-//      . . . . 2 2 2 2 2 2 2 . . . . .
-//      . . . . 2 2 2 2 2 2 2 . . . . .
-//      . . . . . 2 2 2 2 2 . . . . . .
-//      . . . . . . . . . . . . . . . .
-//      . . . . . . . . . . . . . . . .
-//      . . . . . . . . . . . . . . . .
-//      . . . . . . . . . . . . . . . .
-//      . . . . . . . . . . . . . . . .
-//      . . . . . . . . . . . . . . . .
-//  """), SpriteKind.projectile)
-//  tiles.place_on_tile(powerup2, tiles.get_tile_location(57, 4))
-//  def on_overlap2(sprite, otherSprite):
-//      otherSprite.destroy(effects.cool_radial, )
-//  sprites.on_overlap(SpriteKind.player, SpriteKind.projectile, on_overlap2)
 //  enemies setup
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
     game.over()
@@ -922,10 +899,11 @@ let dog = sprites.create(img`
     . . . f 5 f f f 5 f f 5 f . . .
     . . . f f . . f f . . f f . . .
 `)
-tiles.placeOnTile(dog, tiles.getTileLocation(44, 8))
+tiles.placeOnTile(dog, tiles.getTileLocation(45, 8))
 dog.setKind(SpriteKind.Enemy)
 dog.ay = 300
 scene.onHitTile(SpriteKind.Player, 13, function on_hit_tile2(cat: Sprite) {
+    // dog image change
     dog.follow(cat, 85)
 })
 //  win/lose effect

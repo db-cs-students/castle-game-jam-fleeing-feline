@@ -139,7 +139,7 @@ scene.set_tile_map(img("""
     ..............33..............33...88888.........77..........aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb44
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbdbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb44
 """))
 
 #mirror
@@ -704,22 +704,22 @@ scene.set_tile(12, img("""
 """), True)
 
 scene.set_tile(13, img("""
-    c a c c c c c c c a c c c c c c
-    c a c c c c c c c a c c c c c c
-    c a c c c c c c c a c c c c c c
-    a a a a a a a a a a a a a a a a
-    c c c c c a c c c c c c c a c c
-    c c c c c a c c c c c c c a c c
-    c c c c c a c c c c c c c a c c
-    a a a a a a a a a a a a a a a a
-    c a c c c c c c c a c c c c c c
-    c a c c c c c c c a c c c c c c
-    c a c c c c c c c a c c c c c c
-    a a a a a a a a a a a a a a a a
-    c c c c c a c c c c c c c a c c
-    c c c c c a c c c c c c c a c c
-    c c c c c a c c c c c c c a c c
-    a a a a a a a a a a a a a a a a
+    c 3 c c c c c c c 3 c c c c c c
+    c 3 c c c c c c c 3 c c c c c c
+    c 3 c c c c c c c 3 c c c c c c
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    c c c c c 3 c c c c c c c 3 c c
+    c c c c c 3 c c c c c c c 3 c c
+    c c c c c 3 c c c c c c c 3 c c
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    c 3 c c c c c c c 3 c c c c c c
+    c 3 c c c c c c c 3 c c c c c c
+    c 3 c c c c c c c 3 c c c c c c
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    c c c c c 3 c c c c c c c 3 c c
+    c c c c c 3 c c c c c c c 3 c c
+    c c c c c 3 c c c c c c c 3 c c
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
 """), True)
 
 #Door
@@ -898,31 +898,6 @@ def on_overlap(sprite, otherSprite):
     otherSprite.destroy(effects.cool_radial, 100)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap)
 
-# Powerup two
-# powerup2 = sprites.create(img("""
-#     . . . . . . . . . . . . . . . .
-#     . . . . . . . . . . . . . . . .
-#     . . . . . . . . . . . . . . . .
-#     . . . . . 2 2 2 2 2 . . . . . .
-#     . . . . 2 2 2 2 2 2 2 . . . . .
-#     . . . . 2 2 2 2 2 2 2 . . . . .
-#     . . . . 2 2 2 2 2 2 2 . . . . .
-#     . . . . 2 2 2 2 2 2 2 . . . . .
-#     . . . . 2 2 2 2 2 2 2 . . . . .
-#     . . . . . 2 2 2 2 2 . . . . . .
-#     . . . . . . . . . . . . . . . .
-#     . . . . . . . . . . . . . . . .
-#     . . . . . . . . . . . . . . . .
-#     . . . . . . . . . . . . . . . .
-#     . . . . . . . . . . . . . . . .
-#     . . . . . . . . . . . . . . . .
-# """), SpriteKind.projectile)
-# tiles.place_on_tile(powerup2, tiles.get_tile_location(57, 4))
-
-# def on_overlap2(sprite, otherSprite):
-#     otherSprite.destroy(effects.cool_radial, )
-# sprites.on_overlap(SpriteKind.player, SpriteKind.projectile, on_overlap2)
-
 # enemies setup
 def on_hit_tile(sprite):
     game.over()
@@ -945,14 +920,15 @@ dog = sprites.create(img("""
     . . . f 5 f f f 5 f f 5 f . . .
     . . . f f . . f f . . f f . . .
 """))
-tiles.place_on_tile(dog, tiles.get_tile_location(44, 8))
+tiles.place_on_tile(dog, tiles.get_tile_location(45, 8))
 dog.set_kind(SpriteKind.enemy)
 dog.ay = 300
 
-
 def on_hit_tile2(cat):
+    #dog image change
     dog.follow(cat, 85)
 scene.on_hit_tile(SpriteKind.player, 13 , on_hit_tile2)
+
 
 
 # win/lose effect
