@@ -129,6 +129,22 @@ scene.setBackgroundImage(img`
 `)
 info.startCountdown(25)
 game.runtime()
+game.setDialogCursor(img`
+    . 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 .
+    9 9 9 9 9 9 9 9 c f 9 9 9 9 9 f c 9
+    9 9 9 9 9 9 9 9 f 1 f 9 9 9 f 1 f 9
+    9 9 e e f 9 9 9 c 3 1 f f f 1 3 f 9
+    9 f d d d f 9 9 f 1 1 d d d 1 1 c 9
+    9 f d f e 9 9 f d 1 1 1 d 1 1 1 d f
+    9 f d f 9 9 9 f 1 1 c 1 1 1 1 c 1 f
+    9 e d d f e e c 1 1 1 c 1 1 c 1 1 c
+    9 f d d 1 1 1 1 f 1 1 1 3 3 1 1 f 9
+    9 f d 1 1 1 1 1 1 f f c f f f f 9 9
+    9 f 1 1 1 d d 1 1 d d 1 f 9 9 9 9 9
+    9 f 1 1 e f f f f f 1 1 f 9 9 9 9 9
+    9 f d d f 9 9 9 9 9 1 1 f 9 9 9 9 9
+    . 9 f f 9 9 9 9 9 9 f f 9 9 9 9 9 .
+`)
 game.splash("Fleeing Feline", "Help the cat escape!")
 //  Tilemap 
 scene.setTileMap(img`
