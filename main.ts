@@ -953,26 +953,29 @@ game.onUpdate(function on_update() {
 })
 //  powerup one
 let powerup1 = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . a a a a . . . . . . .
-    . . . . a a a a a a . . . . . .
-    . . . . a a a a a a . . . . . .
-    . . . . a a a a 4 a . . . . . .
-    . . . . . a a a 4 4 . . . . . .
-    . . . . . . . . . 4 4 . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
+    . . . 5 5 . . . 5 . . . . . . .
+    5 . . . 5 . . . 5 5 . . . . 5 5
+    5 5 . . 5 . . . . 5 . . . 5 5 .
+    . . . . 4 4 4 4 . . . . 5 5 . .
+    . . 4 4 4 4 4 4 4 . . . . . . .
+    . e 4 4 4 4 4 4 4 4 . . . . . .
+    e 4 4 4 4 4 4 4 4 4 4 . . 1 . .
+    e 4 4 4 4 4 4 4 4 4 1 1 1 1 . 5
+    e 4 4 4 4 4 4 4 4 4 4 d d 1 . 5
+    . e 4 4 4 4 4 4 4 4 e . . . . .
+    . . e e e e e e e e . . . 5 5 .
+    . 5 5 . . 5 . . . . 5 . . . . 5
+    5 5 . . . 5 5 . . . 5 5 . . . .
+    5 . . . . . 5 . . . . 5 5 . . .
+    . . . . . . 5 . . . . . 5 . . .
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Food)
 tiles.placeOnTile(powerup1, tiles.getTileLocation(10, 6))
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy(effects.coolRadial, 100)
+    info.onCountdownEnd(function on_countdown_end() {
+        
+    })
 })
 //  enemies setup
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {

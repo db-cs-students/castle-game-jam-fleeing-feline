@@ -970,27 +970,30 @@ game.on_update(on_update)
 
 # powerup one
 powerup1 = sprites.create(img("""
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . a a a a . . . . . . .
-    . . . . a a a a a a . . . . . .
-    . . . . a a a a a a . . . . . .
-    . . . . a a a a 4 a . . . . . .
-    . . . . . a a a 4 4 . . . . . .
-    . . . . . . . . . 4 4 . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
+    . . . 5 5 . . . 5 . . . . . . .
+    5 . . . 5 . . . 5 5 . . . . 5 5
+    5 5 . . 5 . . . . 5 . . . 5 5 .
+    . . . . 4 4 4 4 . . . . 5 5 . .
+    . . 4 4 4 4 4 4 4 . . . . . . .
+    . e 4 4 4 4 4 4 4 4 . . . . . .
+    e 4 4 4 4 4 4 4 4 4 4 . . 1 . .
+    e 4 4 4 4 4 4 4 4 4 1 1 1 1 . 5
+    e 4 4 4 4 4 4 4 4 4 4 d d 1 . 5
+    . e 4 4 4 4 4 4 4 4 e . . . . .
+    . . e e e e e e e e . . . 5 5 .
+    . 5 5 . . 5 . . . . 5 . . . . 5
+    5 5 . . . 5 5 . . . 5 5 . . . .
+    5 . . . . . 5 . . . . 5 5 . . .
+    . . . . . . 5 . . . . . 5 . . .
     . . . . . . . . . . . . . . . .
 """), SpriteKind.food)
 tiles.place_on_tile(powerup1, tiles.get_tile_location(10, 6))
 
 def on_overlap(sprite, otherSprite):
     otherSprite.destroy(effects.cool_radial, 100)
+    def on_countdown_end():
+        pass
+    info.on_countdown_end(on_countdown_end)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap)
 
 # enemies setup
