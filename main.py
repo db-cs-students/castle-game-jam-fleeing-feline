@@ -127,7 +127,8 @@ scene.set_background_image(img("""
     bbbbbcbbbbbbbbbbbcbbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbacbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbcb
     bbbbbcbbbbbbbbbbbcbbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbcb
 """))
-
+info.start_countdown(25)
+game.runtime()
 # Tilemap 
 scene.set_tile_map(img("""
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -135,7 +136,7 @@ scene.set_tile_map(img("""
     ...................6......................6.....................................
     ...................6......................6.....................................
     .....ee...ee.......6.e..11..e......88888..6.......................cccccc........
-    ..............33...6.e..11..e......88888..6..........77......aaa.............ff9
+    ..............33...6.e..11..e......88888..6..........77......................ff9
     ..............33..............33...88888.........77..........aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
@@ -948,11 +949,11 @@ def on_update3():
 game.on_update(on_update3)
 scene.camera_follow_sprite(cat)
 cat.ay = 300
-tiles.place_on_tile(cat, tiles.get_tile_location(0, 8))
+tiles.place_on_tile(cat, tiles.get_tile_location(1, 8))
 
 #Player controls
-
-controller.move_sprite(cat, 100, 0)
+cat_speed = 100
+controller.move_sprite(cat, cat_speed, 0)
 double_jump = True
 def jump():
     global double_jump
@@ -990,10 +991,12 @@ powerup1 = sprites.create(img("""
 tiles.place_on_tile(powerup1, tiles.get_tile_location(10, 6))
 
 def on_overlap(sprite, otherSprite):
+    global cat_speed
     otherSprite.destroy(effects.cool_radial, 100)
-    def on_countdown_end():
-        pass
-    info.on_countdown_end(on_countdown_end)
+    cat_speed = 150
+    def on_debounce():
+        cat_speed = 100
+    timer.debounce("action", 5000, on_debounce)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap)
 
 # enemies setup
@@ -1003,28 +1006,28 @@ scene.on_hit_tile(SpriteKind.player, 2, on_hit_tile)
 
 
 dog = sprites.create(img("""
-    . . 4 4 4 . . . . 4 4 4 . . . .
-    . 4 5 5 5 e . . e 5 5 5 4 . . .
-    4 5 5 5 5 5 e e 5 5 5 5 5 4 . .
-    4 5 5 4 4 5 5 5 5 4 4 5 5 4 . .
-    e 5 4 4 5 5 5 5 5 5 4 4 5 e . .
-    . e e 5 5 5 5 5 5 5 5 e e . . .
-    . . e 5 f 5 5 5 5 f 5 e . . . .
-    . . f 5 5 5 4 4 5 5 5 f . . f f
-    . . f 4 5 5 f f 5 5 6 f . f 5 f
-    . . . f 6 6 6 6 6 6 4 4 f 5 5 f
-    . . . f 4 5 5 5 5 5 5 4 4 5 f .
-    . . . f 5 5 5 5 5 4 5 5 f f . .
-    . . . f 5 f f f 5 f f 5 f . . .
-    . . . f f . . f f . . f f . . .
+    . . . . . . 4 4 4 . . . . 4 4 4 . .
+    . . . . . 4 5 5 5 e . . e 5 5 5 4 .
+    . . . . 4 5 5 5 5 5 4 4 5 5 5 5 5 4
+    . . . . 4 5 5 4 4 5 5 5 5 4 4 5 5 4
+    . . e e 4 5 4 4 5 5 5 5 5 5 4 4 5 4
+    . 4 5 5 e 4 e 5 5 5 5 5 5 5 5 e 4 .
+    4 5 5 e . . e 5 5 f 5 5 5 f 5 e . .
+    e 5 e . . . 4 5 5 5 5 f 5 5 5 e . .
+    e 5 e 4 e e 4 5 5 5 f 5 f 5 5 4 . .
+    e 5 5 5 5 5 5 e 5 5 5 5 5 5 e . . .
+    e 5 5 5 5 5 5 5 e e e 4 4 e . . . .
+    e 5 5 5 5 5 5 5 5 5 5 e . . . . . .
+    e 5 5 5 e e e e 5 5 5 e . . . . . .
+    e 5 5 e . . . . e 5 5 e . . . . . .
+    e 5 5 e . . . . e 5 5 e . . . . . .
+    e e e e . . . . e e e e . . . . . .
 """))
 tiles.place_on_tile(dog, tiles.get_tile_location(49, 8))
 dog.set_kind(SpriteKind.enemy)
-dog.ay = 300
+dog.ay = 700
 
 def on_hit_tile2(cat):
-    #dog image change
-    #Make it so that dog cannot jump
     dog.follow(cat, 85)
 scene.on_hit_tile(SpriteKind.player, 13 , on_hit_tile2)
 

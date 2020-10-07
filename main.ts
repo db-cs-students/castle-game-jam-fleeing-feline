@@ -127,6 +127,8 @@ scene.setBackgroundImage(img`
     bbbbbcbbbbbbbbbbbcbbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbacbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbcb
     bbbbbcbbbbbbbbbbbcbbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbcb
 `)
+info.startCountdown(25)
+game.runtime()
 //  Tilemap 
 scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -134,7 +136,7 @@ scene.setTileMap(img`
     ...................6......................6.....................................
     ...................6......................6.....................................
     .....ee...ee.......6.e..11..e......88888..6.......................cccccc........
-    ..............33...6.e..11..e......88888..6..........77......aaa.............ff9
+    ..............33...6.e..11..e......88888..6..........77......................ff9
     ..............33..............33...88888.........77..........aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
@@ -932,9 +934,10 @@ game.onUpdate(function on_update3() {
 })
 scene.cameraFollowSprite(cat)
 cat.ay = 300
-tiles.placeOnTile(cat, tiles.getTileLocation(0, 8))
+tiles.placeOnTile(cat, tiles.getTileLocation(1, 8))
 // Player controls
-controller.moveSprite(cat, 100, 0)
+let cat_speed = 100
+controller.moveSprite(cat, cat_speed, 0)
 let double_jump = true
 controller.A.onEvent(ControllerButtonEvent.Pressed, function jump() {
     
@@ -972,9 +975,11 @@ let powerup1 = sprites.create(img`
 `, SpriteKind.Food)
 tiles.placeOnTile(powerup1, tiles.getTileLocation(10, 6))
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
+    
     otherSprite.destroy(effects.coolRadial, 100)
-    info.onCountdownEnd(function on_countdown_end() {
-        
+    cat_speed = 150
+    timer.debounce("action", 5000, function on_debounce() {
+        let cat_speed = 100
     })
 })
 //  enemies setup
@@ -982,27 +987,27 @@ scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
     game.over()
 })
 let dog = sprites.create(img`
-    . . 4 4 4 . . . . 4 4 4 . . . .
-    . 4 5 5 5 e . . e 5 5 5 4 . . .
-    4 5 5 5 5 5 e e 5 5 5 5 5 4 . .
-    4 5 5 4 4 5 5 5 5 4 4 5 5 4 . .
-    e 5 4 4 5 5 5 5 5 5 4 4 5 e . .
-    . e e 5 5 5 5 5 5 5 5 e e . . .
-    . . e 5 f 5 5 5 5 f 5 e . . . .
-    . . f 5 5 5 4 4 5 5 5 f . . f f
-    . . f 4 5 5 f f 5 5 6 f . f 5 f
-    . . . f 6 6 6 6 6 6 4 4 f 5 5 f
-    . . . f 4 5 5 5 5 5 5 4 4 5 f .
-    . . . f 5 5 5 5 5 4 5 5 f f . .
-    . . . f 5 f f f 5 f f 5 f . . .
-    . . . f f . . f f . . f f . . .
+    . . . . . . 4 4 4 . . . . 4 4 4 . .
+    . . . . . 4 5 5 5 e . . e 5 5 5 4 .
+    . . . . 4 5 5 5 5 5 4 4 5 5 5 5 5 4
+    . . . . 4 5 5 4 4 5 5 5 5 4 4 5 5 4
+    . . e e 4 5 4 4 5 5 5 5 5 5 4 4 5 4
+    . 4 5 5 e 4 e 5 5 5 5 5 5 5 5 e 4 .
+    4 5 5 e . . e 5 5 f 5 5 5 f 5 e . .
+    e 5 e . . . 4 5 5 5 5 f 5 5 5 e . .
+    e 5 e 4 e e 4 5 5 5 f 5 f 5 5 4 . .
+    e 5 5 5 5 5 5 e 5 5 5 5 5 5 e . . .
+    e 5 5 5 5 5 5 5 e e e 4 4 e . . . .
+    e 5 5 5 5 5 5 5 5 5 5 e . . . . . .
+    e 5 5 5 e e e e 5 5 5 e . . . . . .
+    e 5 5 e . . . . e 5 5 e . . . . . .
+    e 5 5 e . . . . e 5 5 e . . . . . .
+    e e e e . . . . e e e e . . . . . .
 `)
 tiles.placeOnTile(dog, tiles.getTileLocation(49, 8))
 dog.setKind(SpriteKind.Enemy)
-dog.ay = 300
+dog.ay = 700
 scene.onHitTile(SpriteKind.Player, 13, function on_hit_tile2(cat: Sprite) {
-    // dog image change
-    // Make it so that dog cannot jump
     dog.follow(cat, 85)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
