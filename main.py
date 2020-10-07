@@ -129,6 +129,8 @@ scene.set_background_image(img("""
 """))
 info.start_countdown(25)
 game.runtime()
+game.splash("Fleeing Feline", "Help the cat escape!")
+
 # Tilemap 
 scene.set_tile_map(img("""
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb

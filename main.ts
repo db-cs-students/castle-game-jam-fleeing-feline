@@ -129,6 +129,7 @@ scene.setBackgroundImage(img`
 `)
 info.startCountdown(25)
 game.runtime()
+game.splash("Fleeing Feline", "Help the cat escape!")
 //  Tilemap 
 scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
