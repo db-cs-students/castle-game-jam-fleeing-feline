@@ -980,10 +980,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap(sprite
         controller.moveSprite(cat, 100, 0)
     })
 })
-//  enemies setup
-scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
-    game.over()
-})
 // dog images
 let dog = sprites.create(img`
     . . . . . . 4 4 4 . . . . 4 4 4 . .
@@ -1039,9 +1035,24 @@ let dog_left = img`
     . . . . . . e 5 5 e . . . . e 5 5 e
     . . . . . . e e e e . . . . e e e e
 `
+// dog setup
+game.onUpdate(function on_update2() {
+    if (controller.dx() > 0) {
+        dog.setImage(dog_right)
+    }
+    
+    if (controller.dx() < 0) {
+        dog.setImage(dog_left)
+    }
+    
+})
 tiles.placeOnTile(dog, tiles.getTileLocation(49, 8))
 dog.setKind(SpriteKind.Enemy)
 dog.ay = 700
+//  oven setup
+scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
+    game.over()
+})
 scene.onHitTile(SpriteKind.Player, 13, function on_hit_tile2(cat: Sprite) {
     dog.follow(cat, 85)
 })

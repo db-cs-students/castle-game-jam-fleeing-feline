@@ -996,12 +996,6 @@ def on_overlap(sprite, otherSprite):
         controller.move_sprite(cat, 100, 0)
     timer.debounce("action", 5000, on_debounce)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap)
-
-# enemies setup
-def on_hit_tile(sprite):
-    game.over()
-scene.on_hit_tile(SpriteKind.player, 2, on_hit_tile)
-
 #dog images
 dog = sprites.create(img("""
     . . . . . . 4 4 4 . . . . 4 4 4 . .
@@ -1057,9 +1051,27 @@ dog_left = (img("""
     . . . . . . e 5 5 e . . . . e 5 5 e
     . . . . . . e e e e . . . . e e e e
 """))
+
+#dog setup
+def on_update2():
+    if controller.dx() > 0:
+        dog.set_image(dog_right)
+    if controller.dx() < 0:
+        dog.set_image(dog_left)
+game.on_update(on_update2)
 tiles.place_on_tile(dog, tiles.get_tile_location(49, 8))
 dog.set_kind(SpriteKind.enemy)
 dog.ay = 700
+
+# oven setup
+def on_hit_tile(sprite):
+    game.over()
+scene.on_hit_tile(SpriteKind.player, 2, on_hit_tile)
+
+
+
+
+
 
 def on_hit_tile2(cat):
     dog.follow(cat, 85)
