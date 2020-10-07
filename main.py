@@ -1054,9 +1054,9 @@ dog_left = (img("""
 
 #dog setup
 def on_update2():
-    if controller.dx() > 0:
+    if dog.vx > 0:
         dog.set_image(dog_right)
-    if controller.dx() < 0:
+    if dog.vx < 0:
         dog.set_image(dog_left)
 game.on_update(on_update2)
 tiles.place_on_tile(dog, tiles.get_tile_location(49, 8))

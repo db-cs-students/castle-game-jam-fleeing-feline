@@ -1037,11 +1037,11 @@ let dog_left = img`
 `
 // dog setup
 game.onUpdate(function on_update2() {
-    if (controller.dx() > 0) {
+    if (dog.vx > 0) {
         dog.setImage(dog_right)
     }
     
-    if (controller.dx() < 0) {
+    if (dog.vx < 0) {
         dog.setImage(dog_left)
     }
     
