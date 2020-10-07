@@ -818,23 +818,118 @@ scene.setTile(4, img`
     c c c c c a c c c c c c c a c c
     a a a a a a a a a a a a a a a a
 `, true)
-//  player setup
+// player images
 let cat = sprites.create(img`
-    . . . . . . . . . . . . . .
-    e e e . . . . e e e . . . .
-    c d d c . . c d d c . . . .
-    c b d d f f d d b c . . . .
-    c 3 b d d b d b 3 c . . . .
-    f b 3 d d d d 3 b f . . . .
-    e d d d d d d d d e . . . .
-    e d f d d d d f d e b f b .
-    f d d f d d f d d f f d f .
-    f b d d b b d d 2 b f d f .
-    . f 2 2 2 2 2 2 d b d b f .
-    . f d d d d d d d f f f . .
-    . f d b d f f f d f . . . .
-    . . f f f f . . f f . . . .
+    . . . . . . . . . . . . . . . . . .
+    . . . . . . . . c f . . . . . f c .
+    . . . . . . . . f 1 f . . . f 1 f .
+    . . e e f . . . c 3 1 f f f 1 3 f .
+    . f d d d f . . f 1 1 d d d 1 1 c .
+    . f d f e . . f d 1 1 1 d 1 1 1 d f
+    . f d f . . . f 1 1 c 1 1 1 1 c 1 f
+    . e d d f e e c 1 1 1 c 1 1 c 1 1 c
+    . f d d 1 1 1 1 f 1 1 1 3 3 1 1 f .
+    . f d 1 1 1 1 1 1 f f c f f f f . .
+    . f 1 1 1 d d 1 1 d d 1 f . . . . .
+    . f 1 1 e f f f f f 1 1 f . . . . .
+    . f d d f . . . . . 1 1 f . . . . .
+    . . f f . . . . . . f f . . . . . .
 `, SpriteKind.Player)
+let cat_default = img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . c f . . . . . f c .
+    . . . . . . f 1 f . . . f 1 f .
+    . . f f . . c 3 1 f f f 1 3 f .
+    . f d d f . f 1 1 d d d 1 1 c .
+    f d d f . f d 1 1 1 d 1 1 1 d f
+    f d f . . f 1 1 c 1 1 1 1 c 1 f
+    f d d f f c 1 1 1 c 1 1 c 1 1 c
+    f d d 1 1 1 f 1 1 1 3 3 1 1 f .
+    f d 1 1 d d f f f c f f f f . .
+    f 1 1 1 d 1 f 1 1 1 d d 1 f . .
+    f 1 d f f f f 1 1 f f 1 1 f . .
+    f 1 d f . . f d d . . d 1 f . .
+    . f f . . . . f f . . f f . . .
+`
+let cat_right = img`
+    . . . . . . . . . . . . . . . . . .
+    . . . . . . . . c f . . . . . f c .
+    . . . . . . . . f 1 f . . . f 1 f .
+    . . e e f . . . c 3 1 f f f 1 3 f .
+    . f d d d f . . f 1 1 d d d 1 1 c .
+    . f d f e . . f d 1 1 1 d 1 1 1 d f
+    . f d f . . . f 1 1 c 1 1 1 1 c 1 f
+    . e d d f e e c 1 1 1 c 1 1 c 1 1 c
+    . f d d 1 1 1 1 f 1 1 1 3 3 1 1 f .
+    . f d 1 1 1 1 1 1 f f c f f f f . .
+    . f 1 1 1 d d 1 1 d d 1 f . . . . .
+    . f 1 1 e f f f f f 1 1 f . . . . .
+    . f d d f . . . . . 1 1 f . . . . .
+    . . f f . . . . . . f f . . . . . .
+`
+let cat_left = img`
+    . . . . . . . . . . . . . . . . . .
+    . c f . . . . . f c . . . . . . . .
+    . f 1 f . . . f 1 f . . . . . . . .
+    . f 3 1 f f f 1 3 f . . . f e e . .
+    . c 1 1 d d d 1 1 c . . f d d d f .
+    f d 1 1 1 d 1 1 1 d f . . e f d f .
+    f 1 c 1 1 1 1 c 1 1 f . . . f d f .
+    f 1 1 c 1 1 c 1 1 1 c e e f d d e .
+    . f 1 1 3 3 1 1 1 f 1 1 1 1 d d f .
+    . . f f f f f f f 1 1 1 1 1 1 d f .
+    . . . . . f 1 d d 1 1 d d 1 1 1 f .
+    . . . . . f 1 1 1 f f f f e 1 1 f .
+    . . . . . f 1 1 e . . . . f d d f .
+    . . . . . . f f . . . . . . f f . .
+`
+let cat_left_jump = img`
+    . c f . . . . . f c . . . . . . . . .
+    . f 1 f . . . f 1 f . . . . . . . . .
+    . f 3 1 f f f 1 3 f . . . . . . f f .
+    . c 1 1 d d d 1 1 c . . . . . c d d c
+    f d 1 1 1 d 1 1 1 d f . . . f d d f .
+    f 1 c 1 1 1 1 c 1 1 f . . . f d f . .
+    c 1 1 c 1 1 c 1 1 1 c f f f d d f . .
+    . f 1 1 3 3 1 1 d f d d 1 1 1 d d f .
+    . . c f f f f f f 1 1 1 1 1 1 1 d f .
+    . . . c d d 1 1 1 1 1 1 1 d 1 1 1 f .
+    . . f 1 1 1 f 1 d c f f c c 1 1 1 1 f
+    . f d 1 f f . f f . . . . . f f 1 d d
+    . f 1 c . . . . . . . . . . . . f f d
+    . . f . . . . . . . . . . . . . . . c
+`
+let cat_right_jump = img`
+    . . . . . . . . . c f . . . . . f c .
+    . . . . . . . . . f 1 f . . . f 1 f .
+    . f f . . . . . . c 3 1 f f f 1 3 f .
+    c d d c . . . . . f 1 1 d d d 1 1 c .
+    . f d d f . . . f d 1 1 1 d 1 1 1 d f
+    . . f d f . . . f 1 1 c 1 1 1 1 c 1 f
+    . . f d d f f f c 1 1 1 c 1 1 c 1 1 c
+    . f d d 1 1 1 d d f 1 1 1 3 3 1 1 f .
+    . f d 1 1 1 1 1 1 1 f f c f f f c . .
+    . f 1 1 1 d 1 1 1 1 1 1 1 d d c . . .
+    f 1 1 1 1 c c f f c d 1 f 1 1 1 f . .
+    d d 1 f f . . . . . f f . f f 1 d f .
+    d f f . . . . . . . . . . . . c d f .
+    c . . . . . . . . . . . . . . . f . .
+`
+//  player setup
+game.onUpdate(function on_update3() {
+    if (controller.dx() < 0 && controller.A.isPressed()) {
+        cat.setImage(cat_left_jump)
+    } else if (controller.dx() > 0 && controller.A.isPressed()) {
+        cat.setImage(cat_right_jump)
+    } else if (controller.dx() < 0) {
+        cat.setImage(cat_left)
+    } else if (controller.dx() > 0) {
+        cat.setImage(cat_right)
+    } else {
+        cat.setImage(cat_default)
+    }
+    
+})
 scene.cameraFollowSprite(cat)
 cat.ay = 300
 tiles.placeOnTile(cat, tiles.getTileLocation(0, 8))
@@ -899,11 +994,12 @@ let dog = sprites.create(img`
     . . . f 5 f f f 5 f f 5 f . . .
     . . . f f . . f f . . f f . . .
 `)
-tiles.placeOnTile(dog, tiles.getTileLocation(45, 8))
+tiles.placeOnTile(dog, tiles.getTileLocation(49, 8))
 dog.setKind(SpriteKind.Enemy)
 dog.ay = 300
 scene.onHitTile(SpriteKind.Player, 13, function on_hit_tile2(cat: Sprite) {
     // dog image change
+    // Make it so that dog cannot jump
     dog.follow(cat, 85)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {

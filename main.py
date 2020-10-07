@@ -833,24 +833,119 @@ scene.set_tile(4, img("""
     c c c c c a c c c c c c c a c c
     a a a a a a a a a a a a a a a a
 """), True)
+#player images
+cat = sprites.create(img("""
+    . . . . . . . . . . . . . . . . . .
+    . . . . . . . . c f . . . . . f c .
+    . . . . . . . . f 1 f . . . f 1 f .
+    . . e e f . . . c 3 1 f f f 1 3 f .
+    . f d d d f . . f 1 1 d d d 1 1 c .
+    . f d f e . . f d 1 1 1 d 1 1 1 d f
+    . f d f . . . f 1 1 c 1 1 1 1 c 1 f
+    . e d d f e e c 1 1 1 c 1 1 c 1 1 c
+    . f d d 1 1 1 1 f 1 1 1 3 3 1 1 f .
+    . f d 1 1 1 1 1 1 f f c f f f f . .
+    . f 1 1 1 d d 1 1 d d 1 f . . . . .
+    . f 1 1 e f f f f f 1 1 f . . . . .
+    . f d d f . . . . . 1 1 f . . . . .
+    . . f f . . . . . . f f . . . . . .
+"""), SpriteKind.player)
+cat_default = (img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . . c f . . . . . f c .
+    . . . . . . f 1 f . . . f 1 f .
+    . . f f . . c 3 1 f f f 1 3 f .
+    . f d d f . f 1 1 d d d 1 1 c .
+    f d d f . f d 1 1 1 d 1 1 1 d f
+    f d f . . f 1 1 c 1 1 1 1 c 1 f
+    f d d f f c 1 1 1 c 1 1 c 1 1 c
+    f d d 1 1 1 f 1 1 1 3 3 1 1 f .
+    f d 1 1 d d f f f c f f f f . .
+    f 1 1 1 d 1 f 1 1 1 d d 1 f . .
+    f 1 d f f f f 1 1 f f 1 1 f . .
+    f 1 d f . . f d d . . d 1 f . .
+    . f f . . . . f f . . f f . . .
+"""))
+cat_right = (img("""
+    . . . . . . . . . . . . . . . . . .
+    . . . . . . . . c f . . . . . f c .
+    . . . . . . . . f 1 f . . . f 1 f .
+    . . e e f . . . c 3 1 f f f 1 3 f .
+    . f d d d f . . f 1 1 d d d 1 1 c .
+    . f d f e . . f d 1 1 1 d 1 1 1 d f
+    . f d f . . . f 1 1 c 1 1 1 1 c 1 f
+    . e d d f e e c 1 1 1 c 1 1 c 1 1 c
+    . f d d 1 1 1 1 f 1 1 1 3 3 1 1 f .
+    . f d 1 1 1 1 1 1 f f c f f f f . .
+    . f 1 1 1 d d 1 1 d d 1 f . . . . .
+    . f 1 1 e f f f f f 1 1 f . . . . .
+    . f d d f . . . . . 1 1 f . . . . .
+    . . f f . . . . . . f f . . . . . .
+"""))
+cat_left = (img("""
+    . . . . . . . . . . . . . . . . . .
+    . c f . . . . . f c . . . . . . . .
+    . f 1 f . . . f 1 f . . . . . . . .
+    . f 3 1 f f f 1 3 f . . . f e e . .
+    . c 1 1 d d d 1 1 c . . f d d d f .
+    f d 1 1 1 d 1 1 1 d f . . e f d f .
+    f 1 c 1 1 1 1 c 1 1 f . . . f d f .
+    f 1 1 c 1 1 c 1 1 1 c e e f d d e .
+    . f 1 1 3 3 1 1 1 f 1 1 1 1 d d f .
+    . . f f f f f f f 1 1 1 1 1 1 d f .
+    . . . . . f 1 d d 1 1 d d 1 1 1 f .
+    . . . . . f 1 1 1 f f f f e 1 1 f .
+    . . . . . f 1 1 e . . . . f d d f .
+    . . . . . . f f . . . . . . f f . .
+"""))
+cat_left_jump = (img("""
+    . c f . . . . . f c . . . . . . . . .
+    . f 1 f . . . f 1 f . . . . . . . . .
+    . f 3 1 f f f 1 3 f . . . . . . f f .
+    . c 1 1 d d d 1 1 c . . . . . c d d c
+    f d 1 1 1 d 1 1 1 d f . . . f d d f .
+    f 1 c 1 1 1 1 c 1 1 f . . . f d f . .
+    c 1 1 c 1 1 c 1 1 1 c f f f d d f . .
+    . f 1 1 3 3 1 1 d f d d 1 1 1 d d f .
+    . . c f f f f f f 1 1 1 1 1 1 1 d f .
+    . . . c d d 1 1 1 1 1 1 1 d 1 1 1 f .
+    . . f 1 1 1 f 1 d c f f c c 1 1 1 1 f
+    . f d 1 f f . f f . . . . . f f 1 d d
+    . f 1 c . . . . . . . . . . . . f f d
+    . . f . . . . . . . . . . . . . . . c
+"""))
+cat_right_jump = (img("""
+    . . . . . . . . . c f . . . . . f c .
+    . . . . . . . . . f 1 f . . . f 1 f .
+    . f f . . . . . . c 3 1 f f f 1 3 f .
+    c d d c . . . . . f 1 1 d d d 1 1 c .
+    . f d d f . . . f d 1 1 1 d 1 1 1 d f
+    . . f d f . . . f 1 1 c 1 1 1 1 c 1 f
+    . . f d d f f f c 1 1 1 c 1 1 c 1 1 c
+    . f d d 1 1 1 d d f 1 1 1 3 3 1 1 f .
+    . f d 1 1 1 1 1 1 1 f f c f f f c . .
+    . f 1 1 1 d 1 1 1 1 1 1 1 d d c . . .
+    f 1 1 1 1 c c f f c d 1 f 1 1 1 f . .
+    d d 1 f f . . . . . f f . f f 1 d f .
+    d f f . . . . . . . . . . . . c d f .
+    c . . . . . . . . . . . . . . . f . .
+"""))
 
 # player setup
-cat = sprites.create(img("""
-    . . . . . . . . . . . . . .
-    e e e . . . . e e e . . . .
-    c d d c . . c d d c . . . .
-    c b d d f f d d b c . . . .
-    c 3 b d d b d b 3 c . . . .
-    f b 3 d d d d 3 b f . . . .
-    e d d d d d d d d e . . . .
-    e d f d d d d f d e b f b .
-    f d d f d d f d d f f d f .
-    f b d d b b d d 2 b f d f .
-    . f 2 2 2 2 2 2 d b d b f .
-    . f d d d d d d d f f f . .
-    . f d b d f f f d f . . . .
-    . . f f f f . . f f . . . .
-"""), SpriteKind.player)
+
+def on_update3():
+    if controller.dx() < 0 and controller.A.is_pressed():
+        cat.set_image(cat_left_jump)
+    elif controller.dx() > 0 and controller.A.is_pressed():
+        cat.set_image(cat_right_jump)
+    elif controller.dx() < 0:
+        cat.set_image(cat_left)
+    elif controller.dx() > 0:
+        cat.set_image(cat_right)
+    else:
+        cat.set_image(cat_default)
+
+game.on_update(on_update3)
 scene.camera_follow_sprite(cat)
 cat.ay = 300
 tiles.place_on_tile(cat, tiles.get_tile_location(0, 8))
@@ -920,12 +1015,13 @@ dog = sprites.create(img("""
     . . . f 5 f f f 5 f f 5 f . . .
     . . . f f . . f f . . f f . . .
 """))
-tiles.place_on_tile(dog, tiles.get_tile_location(45, 8))
+tiles.place_on_tile(dog, tiles.get_tile_location(49, 8))
 dog.set_kind(SpriteKind.enemy)
 dog.ay = 300
 
 def on_hit_tile2(cat):
     #dog image change
+    #Make it so that dog cannot jump
     dog.follow(cat, 85)
 scene.on_hit_tile(SpriteKind.player, 13 , on_hit_tile2)
 
