@@ -952,8 +952,7 @@ cat.ay = 300
 tiles.place_on_tile(cat, tiles.get_tile_location(1, 8))
 
 #Player controls
-cat_speed = 100
-controller.move_sprite(cat, cat_speed, 0)
+controller.move_sprite(cat, 100, 0)
 double_jump = True
 def jump():
     global double_jump
@@ -991,11 +990,10 @@ powerup1 = sprites.create(img("""
 tiles.place_on_tile(powerup1, tiles.get_tile_location(10, 6))
 
 def on_overlap(sprite, otherSprite):
-    global cat_speed
     otherSprite.destroy(effects.cool_radial, 100)
-    cat_speed = 150
+    controller.move_sprite(cat, 150, 0)
     def on_debounce():
-        cat_speed = 100
+        controller.move_sprite(cat, 100, 0)
     timer.debounce("action", 5000, on_debounce)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap)
 
@@ -1004,7 +1002,7 @@ def on_hit_tile(sprite):
     game.over()
 scene.on_hit_tile(SpriteKind.player, 2, on_hit_tile)
 
-
+#dog images
 dog = sprites.create(img("""
     . . . . . . 4 4 4 . . . . 4 4 4 . .
     . . . . . 4 5 5 5 e . . e 5 5 5 4 .
@@ -1022,6 +1020,42 @@ dog = sprites.create(img("""
     e 5 5 e . . . . e 5 5 e . . . . . .
     e 5 5 e . . . . e 5 5 e . . . . . .
     e e e e . . . . e e e e . . . . . .
+"""))
+dog_right = (img("""
+    . . . . . . 4 4 4 . . . . 4 4 4 . .
+    . . . . . 4 5 5 5 e . . e 5 5 5 4 .
+    . . . . 4 5 5 5 5 5 4 4 5 5 5 5 5 4
+    . . . . 4 5 5 4 4 5 5 5 5 4 4 5 5 4
+    . . e e 4 5 4 4 5 5 5 5 5 5 4 4 5 4
+    . 4 5 5 e 4 e 5 5 5 5 5 5 5 5 e 4 .
+    4 5 5 e . . e 5 5 f 5 5 5 f 5 e . .
+    e 5 e . . . 4 5 5 5 5 f 5 5 5 e . .
+    e 5 e 4 e e 4 5 5 5 f 5 f 5 5 4 . .
+    e 5 5 5 5 5 5 e 5 5 5 5 5 5 e . . .
+    e 5 5 5 5 5 5 5 e e e 4 4 e . . . .
+    e 5 5 5 5 5 5 5 5 5 5 e . . . . . .
+    e 5 5 5 e e e e 5 5 5 e . . . . . .
+    e 5 5 e . . . . e 5 5 e . . . . . .
+    e 5 5 e . . . . e 5 5 e . . . . . .
+    e e e e . . . . e e e e . . . . . .
+"""))
+dog_left = (img("""
+    . . 4 4 4 . . . . 4 4 4 . . . . . .
+    . 4 5 5 5 e . . e 5 5 5 4 . . . . .
+    4 5 5 5 5 5 4 4 5 5 5 5 5 4 . . . .
+    4 5 5 4 4 5 5 5 5 4 4 5 5 4 . . . .
+    4 5 4 4 5 5 5 5 5 5 4 4 5 4 e e . .
+    . 4 e 5 5 5 5 5 5 5 5 e 4 e 5 5 4 .
+    . . e 5 f 5 5 5 f 5 5 e . . e 5 5 4
+    . . e 5 5 5 f 5 5 5 5 4 . . . e 5 e
+    . . 4 5 5 f 5 f 5 5 5 4 e e 4 e 5 e
+    . . . e 5 5 5 5 5 5 e 5 5 5 5 5 5 e
+    . . . . e 4 4 e e e 5 5 5 5 5 5 5 e
+    . . . . . . e 5 5 5 5 5 5 5 5 5 5 e
+    . . . . . . e 5 5 5 e e e e 5 5 5 e
+    . . . . . . e 5 5 e . . . . e 5 5 e
+    . . . . . . e 5 5 e . . . . e 5 5 e
+    . . . . . . e e e e . . . . e e e e
 """))
 tiles.place_on_tile(dog, tiles.get_tile_location(49, 8))
 dog.set_kind(SpriteKind.enemy)

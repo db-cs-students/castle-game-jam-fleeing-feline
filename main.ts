@@ -936,8 +936,7 @@ scene.cameraFollowSprite(cat)
 cat.ay = 300
 tiles.placeOnTile(cat, tiles.getTileLocation(1, 8))
 // Player controls
-let cat_speed = 100
-controller.moveSprite(cat, cat_speed, 0)
+controller.moveSprite(cat, 100, 0)
 let double_jump = true
 controller.A.onEvent(ControllerButtonEvent.Pressed, function jump() {
     
@@ -975,17 +974,17 @@ let powerup1 = sprites.create(img`
 `, SpriteKind.Food)
 tiles.placeOnTile(powerup1, tiles.getTileLocation(10, 6))
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
-    
     otherSprite.destroy(effects.coolRadial, 100)
-    cat_speed = 150
+    controller.moveSprite(cat, 150, 0)
     timer.debounce("action", 5000, function on_debounce() {
-        let cat_speed = 100
+        controller.moveSprite(cat, 100, 0)
     })
 })
 //  enemies setup
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
     game.over()
 })
+// dog images
 let dog = sprites.create(img`
     . . . . . . 4 4 4 . . . . 4 4 4 . .
     . . . . . 4 5 5 5 e . . e 5 5 5 4 .
@@ -1004,6 +1003,42 @@ let dog = sprites.create(img`
     e 5 5 e . . . . e 5 5 e . . . . . .
     e e e e . . . . e e e e . . . . . .
 `)
+let dog_right = img`
+    . . . . . . 4 4 4 . . . . 4 4 4 . .
+    . . . . . 4 5 5 5 e . . e 5 5 5 4 .
+    . . . . 4 5 5 5 5 5 4 4 5 5 5 5 5 4
+    . . . . 4 5 5 4 4 5 5 5 5 4 4 5 5 4
+    . . e e 4 5 4 4 5 5 5 5 5 5 4 4 5 4
+    . 4 5 5 e 4 e 5 5 5 5 5 5 5 5 e 4 .
+    4 5 5 e . . e 5 5 f 5 5 5 f 5 e . .
+    e 5 e . . . 4 5 5 5 5 f 5 5 5 e . .
+    e 5 e 4 e e 4 5 5 5 f 5 f 5 5 4 . .
+    e 5 5 5 5 5 5 e 5 5 5 5 5 5 e . . .
+    e 5 5 5 5 5 5 5 e e e 4 4 e . . . .
+    e 5 5 5 5 5 5 5 5 5 5 e . . . . . .
+    e 5 5 5 e e e e 5 5 5 e . . . . . .
+    e 5 5 e . . . . e 5 5 e . . . . . .
+    e 5 5 e . . . . e 5 5 e . . . . . .
+    e e e e . . . . e e e e . . . . . .
+`
+let dog_left = img`
+    . . 4 4 4 . . . . 4 4 4 . . . . . .
+    . 4 5 5 5 e . . e 5 5 5 4 . . . . .
+    4 5 5 5 5 5 4 4 5 5 5 5 5 4 . . . .
+    4 5 5 4 4 5 5 5 5 4 4 5 5 4 . . . .
+    4 5 4 4 5 5 5 5 5 5 4 4 5 4 e e . .
+    . 4 e 5 5 5 5 5 5 5 5 e 4 e 5 5 4 .
+    . . e 5 f 5 5 5 f 5 5 e . . e 5 5 4
+    . . e 5 5 5 f 5 5 5 5 4 . . . e 5 e
+    . . 4 5 5 f 5 f 5 5 5 4 e e 4 e 5 e
+    . . . e 5 5 5 5 5 5 e 5 5 5 5 5 5 e
+    . . . . e 4 4 e e e 5 5 5 5 5 5 5 e
+    . . . . . . e 5 5 5 5 5 5 5 5 5 5 e
+    . . . . . . e 5 5 5 e e e e 5 5 5 e
+    . . . . . . e 5 5 e . . . . e 5 5 e
+    . . . . . . e 5 5 e . . . . e 5 5 e
+    . . . . . . e e e e . . . . e e e e
+`
 tiles.placeOnTile(dog, tiles.getTileLocation(49, 8))
 dog.setKind(SpriteKind.Enemy)
 dog.ay = 700
