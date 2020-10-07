@@ -128,7 +128,6 @@ scene.setBackgroundImage(img`
     bbbbbcbbbbbbbbbbbcbbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbcb
 `)
 info.startCountdown(25)
-game.runtime()
 game.setDialogCursor(img`
     . 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 .
     9 9 9 9 9 9 9 9 c f 9 9 9 9 9 f c 9

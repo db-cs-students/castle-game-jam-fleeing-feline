@@ -128,7 +128,6 @@ scene.set_background_image(img("""
     bbbbbcbbbbbbbbbbbcbbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbcb
 """))
 info.start_countdown(25)
-game.runtime()
 game.set_dialog_cursor(img("""
     . 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 .
     9 9 9 9 9 9 9 9 c f 9 9 9 9 9 f c 9
@@ -1085,10 +1084,6 @@ dog.ay = 700
 def on_hit_tile(sprite):
     game.over()
 scene.on_hit_tile(SpriteKind.player, 2, on_hit_tile)
-
-
-
-
 
 
 def on_hit_tile2(cat):
