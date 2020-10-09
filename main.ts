@@ -1077,5 +1077,5 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap2(spri
 })
 //  win/lose effect
 scene.onHitTile(SpriteKind.Player, 4, function on_outside(sprite: Sprite) {
-    game.over(true)
+    game.over(true, effects.smiles)
 })

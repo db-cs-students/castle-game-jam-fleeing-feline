@@ -1097,5 +1097,5 @@ sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_overlap2)
 
 # win/lose effect
 def on_outside(sprite):
-    game.over(True)
+    game.over(True, effects.smiles)
 scene.on_hit_tile(SpriteKind.player, 4, on_outside)
