@@ -722,22 +722,22 @@ scene.set_tile(12, img("""
 """), True)
 
 scene.set_tile(13, img("""
-    c 3 c c c c c c c 3 c c c c c c
-    c 3 c c c c c c c 3 c c c c c c
-    c 3 c c c c c c c 3 c c c c c c
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    c c c c c 3 c c c c c c c 3 c c
-    c c c c c 3 c c c c c c c 3 c c
-    c c c c c 3 c c c c c c c 3 c c
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    c 3 c c c c c c c 3 c c c c c c
-    c 3 c c c c c c c 3 c c c c c c
-    c 3 c c c c c c c 3 c c c c c c
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    c c c c c 3 c c c c c c c 3 c c
-    c c c c c 3 c c c c c c c 3 c c
-    c c c c c 3 c c c c c c c 3 c c
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
 """), True)
 
 #Door

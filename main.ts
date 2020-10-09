@@ -708,22 +708,22 @@ scene.setTile(12, img`
     a a a a a a a a a a a a a a a a
 `, true)
 scene.setTile(13, img`
-    c 3 c c c c c c c 3 c c c c c c
-    c 3 c c c c c c c 3 c c c c c c
-    c 3 c c c c c c c 3 c c c c c c
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    c c c c c 3 c c c c c c c 3 c c
-    c c c c c 3 c c c c c c c 3 c c
-    c c c c c 3 c c c c c c c 3 c c
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    c 3 c c c c c c c 3 c c c c c c
-    c 3 c c c c c c c 3 c c c c c c
-    c 3 c c c c c c c 3 c c c c c c
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    c c c c c 3 c c c c c c c 3 c c
-    c c c c c 3 c c c c c c c 3 c c
-    c c c c c 3 c c c c c c c 3 c c
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
 `, true)
 // Door
 scene.setTile(15, img`
