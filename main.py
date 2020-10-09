@@ -1078,7 +1078,7 @@ def on_update2():
 game.on_update(on_update2)
 tiles.place_on_tile(dog, tiles.get_tile_location(49, 8))
 dog.set_kind(SpriteKind.enemy)
-dog.ay = 700
+dog.ay = 800
 
 # oven setup
 def on_hit_tile(sprite):

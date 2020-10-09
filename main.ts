@@ -1064,7 +1064,7 @@ game.onUpdate(function on_update2() {
 })
 tiles.placeOnTile(dog, tiles.getTileLocation(49, 8))
 dog.setKind(SpriteKind.Enemy)
-dog.ay = 700
+dog.ay = 800
 //  oven setup
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
     game.over()
