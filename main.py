@@ -144,7 +144,7 @@ game.set_dialog_cursor(img("""
     9 f d d f 9 9 9 9 9 1 1 f 9 9 9 9 9
     . 9 f f 9 9 9 9 9 9 f f 9 9 9 9 9 .
 """))
-game.splash("Fleeing Feline", "Help the cat escape!")
+game.splash("Fleeing Feline", "Help the cat escape! And watch out for the dog.")
 
 # Tilemap 
 scene.set_tile_map(img("""
