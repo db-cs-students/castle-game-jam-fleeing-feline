@@ -127,6 +127,24 @@ scene.setBackgroundImage(img`
     bbbbbcbbbbbbbbbbbcbbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbacbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbcb
     bbbbbcbbbbbbbbbbbcbbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbbcbbbbbbbbbbcbbbbbbbbbcb
 `)
+info.startCountdown(25)
+game.setDialogCursor(img`
+    . 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 .
+    9 9 9 9 9 9 9 9 c f 9 9 9 9 9 f c 9
+    9 9 9 9 9 9 9 9 f 1 f 9 9 9 f 1 f 9
+    9 9 e e f 9 9 9 c 3 1 f f f 1 3 f 9
+    9 f d d d f 9 9 f 1 1 d d d 1 1 c 9
+    9 f d f e 9 9 f d 1 1 1 d 1 1 1 d f
+    9 f d f 9 9 9 f 1 1 c 1 1 1 1 c 1 f
+    9 e d d f e e c 1 1 1 c 1 1 c 1 1 c
+    9 f d d 1 1 1 1 f 1 1 1 3 3 1 1 f 9
+    9 f d 1 1 1 1 1 1 f f c f f f f 9 9
+    9 f 1 1 1 d d 1 1 d d 1 f 9 9 9 9 9
+    9 f 1 1 e f f f f f 1 1 f 9 9 9 9 9
+    9 f d d f 9 9 9 9 9 1 1 f 9 9 9 9 9
+    . 9 f f 9 9 9 9 9 9 f f 9 9 9 9 9 .
+`)
+game.splash("Fleeing Feline", "Help the cat escape! And watch out for the dog.")
 //  Tilemap 
 scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -134,7 +152,7 @@ scene.setTileMap(img`
     ...................6......................6.....................................
     ...................6......................6.....................................
     .....ee...ee.......6.e..11..e......88888..6.......................cccccc........
-    ..............33...6.e..11..e......88888..6..........77......aaa.............ff9
+    ..............33...6.e..11..e......88888..6..........77......................ff9
     ..............33..............33...88888.........77..........aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
     ...e5e522e5...33.......e5e5...33...88888.....................aaa.............ff9
@@ -285,22 +303,30 @@ scene.onHitTile(SpriteKind.Player, 2, function on_hit_oven(sprite: Sprite) {
 })
 // fridge
 scene.setTile(3, img`
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    ...cccccccccc...
+    ..c1111111111c..
+    .c111111111111c.
+    .c111111111111c.
+    .c111111111cc1c.
+    .f1111111111c1f.
+    .f1111111111c1f.
+    f11111111111c11f
+    f1111111111cc11f
+    fc111111111111cf
+    f1bbbbbbbbbbbb1f
+    f11111111111111f
+    f1111111111cc11f
+    f11111111111c11f
+    f11111111111c11f
+    f11111111111c11f
+    f11111111111c11f
+    f11111111111c11f
+    c1111111111c111f
+    c11111111111111c
+    c11111111111111c
+    .cccccccccccccc.
+    .fbbfbbbbbbfbbf.
+    ..ff........ff..
 `, true)
 let fridge = sprites.create(img`
     dddddddddddddddddddddddddddddddd
@@ -690,22 +716,22 @@ scene.setTile(12, img`
     a a a a a a a a a a a a a a a a
 `, true)
 scene.setTile(13, img`
-    c 3 c c c c c c c 3 c c c c c c
-    c 3 c c c c c c c 3 c c c c c c
-    c 3 c c c c c c c 3 c c c c c c
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    c c c c c 3 c c c c c c c 3 c c
-    c c c c c 3 c c c c c c c 3 c c
-    c c c c c 3 c c c c c c c 3 c c
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    c 3 c c c c c c c 3 c c c c c c
-    c 3 c c c c c c c 3 c c c c c c
-    c 3 c c c c c c c 3 c c c c c c
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
-    c c c c c 3 c c c c c c c 3 c c
-    c c c c c 3 c c c c c c c 3 c c
-    c c c c c 3 c c c c c c c 3 c c
-    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    c a c c c c c c c a c c c c c c
+    a a a a a a a a a a a a a a a a
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    c c c c c a c c c c c c c a c c
+    a a a a a a a a a a a a a a a a
 `, true)
 // Door
 scene.setTile(15, img`
@@ -818,26 +844,121 @@ scene.setTile(4, img`
     c c c c c a c c c c c c c a c c
     a a a a a a a a a a a a a a a a
 `, true)
-//  player setup
+// player images
 let cat = sprites.create(img`
-    . . . . . . . . . . . . . .
-    e e e . . . . e e e . . . .
-    c d d c . . c d d c . . . .
-    c b d d f f d d b c . . . .
-    c 3 b d d b d b 3 c . . . .
-    f b 3 d d d d 3 b f . . . .
-    e d d d d d d d d e . . . .
-    e d f d d d d f d e b f b .
-    f d d f d d f d d f f d f .
-    f b d d b b d d 2 b f d f .
-    . f 2 2 2 2 2 2 d b d b f .
-    . f d d d d d d d f f f . .
-    . f d b d f f f d f . . . .
-    . . f f f f . . f f . . . .
+    . . . . . . . . . . . . . . . . . .
+    . . . . . . . . c f . . . . . f c .
+    . . . . . . . . f 1 f . . . f 1 f .
+    . . e e f . . . c 3 1 f f f 1 3 f .
+    . f d d d f . . f 1 1 d d d 1 1 c .
+    . f d f e . . f d 1 1 1 d 1 1 1 d f
+    . f d f . . . f 1 1 c 1 1 1 1 c 1 f
+    . e d d f e e c 1 1 1 c 1 1 c 1 1 c
+    . f d d 1 1 1 1 f 1 1 1 3 3 1 1 f .
+    . f d 1 1 1 1 1 1 f f c f f f f . .
+    . f 1 1 1 d d 1 1 d d 1 f . . . . .
+    . f 1 1 e f f f f f 1 1 f . . . . .
+    . f d d f . . . . . 1 1 f . . . . .
+    . . f f . . . . . . f f . . . . . .
 `, SpriteKind.Player)
+let cat_default = img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . c f . . . . . f c .
+    . . . . . . f 1 f . . . f 1 f .
+    . . f f . . c 3 1 f f f 1 3 f .
+    . f d d f . f 1 1 d d d 1 1 c .
+    f d d f . f d 1 1 1 d 1 1 1 d f
+    f d f . . f 1 1 c 1 1 1 1 c 1 f
+    f d d f f c 1 1 1 c 1 1 c 1 1 c
+    f d d 1 1 1 f 1 1 1 3 3 1 1 f .
+    f d 1 1 d d f f f c f f f f . .
+    f 1 1 1 d 1 f 1 1 1 d d 1 f . .
+    f 1 d f f f f 1 1 f f 1 1 f . .
+    f 1 d f . . f d d . . d 1 f . .
+    . f f . . . . f f . . f f . . .
+`
+let cat_right = img`
+    . . . . . . . . . . . . . . . . . .
+    . . . . . . . . c f . . . . . f c .
+    . . . . . . . . f 1 f . . . f 1 f .
+    . . e e f . . . c 3 1 f f f 1 3 f .
+    . f d d d f . . f 1 1 d d d 1 1 c .
+    . f d f e . . f d 1 1 1 d 1 1 1 d f
+    . f d f . . . f 1 1 c 1 1 1 1 c 1 f
+    . e d d f e e c 1 1 1 c 1 1 c 1 1 c
+    . f d d 1 1 1 1 f 1 1 1 3 3 1 1 f .
+    . f d 1 1 1 1 1 1 f f c f f f f . .
+    . f 1 1 1 d d 1 1 d d 1 f . . . . .
+    . f 1 1 e f f f f f 1 1 f . . . . .
+    . f d d f . . . . . 1 1 f . . . . .
+    . . f f . . . . . . f f . . . . . .
+`
+let cat_left = img`
+    . . . . . . . . . . . . . . . . . .
+    . c f . . . . . f c . . . . . . . .
+    . f 1 f . . . f 1 f . . . . . . . .
+    . f 3 1 f f f 1 3 f . . . f e e . .
+    . c 1 1 d d d 1 1 c . . f d d d f .
+    f d 1 1 1 d 1 1 1 d f . . e f d f .
+    f 1 c 1 1 1 1 c 1 1 f . . . f d f .
+    f 1 1 c 1 1 c 1 1 1 c e e f d d e .
+    . f 1 1 3 3 1 1 1 f 1 1 1 1 d d f .
+    . . f f f f f f f 1 1 1 1 1 1 d f .
+    . . . . . f 1 d d 1 1 d d 1 1 1 f .
+    . . . . . f 1 1 1 f f f f e 1 1 f .
+    . . . . . f 1 1 e . . . . f d d f .
+    . . . . . . f f . . . . . . f f . .
+`
+let cat_left_jump = img`
+    . c f . . . . . f c . . . . . . . . .
+    . f 1 f . . . f 1 f . . . . . . . . .
+    . f 3 1 f f f 1 3 f . . . . . . f f .
+    . c 1 1 d d d 1 1 c . . . . . c d d c
+    f d 1 1 1 d 1 1 1 d f . . . f d d f .
+    f 1 c 1 1 1 1 c 1 1 f . . . f d f . .
+    c 1 1 c 1 1 c 1 1 1 c f f f d d f . .
+    . f 1 1 3 3 1 1 d f d d 1 1 1 d d f .
+    . . c f f f f f f 1 1 1 1 1 1 1 d f .
+    . . . c d d 1 1 1 1 1 1 1 d 1 1 1 f .
+    . . f 1 1 1 f 1 d c f f c c 1 1 1 1 f
+    . f d 1 f f . f f . . . . . f f 1 d d
+    . f 1 c . . . . . . . . . . . . f f d
+    . . f . . . . . . . . . . . . . . . c
+`
+let cat_right_jump = img`
+    . . . . . . . . . c f . . . . . f c .
+    . . . . . . . . . f 1 f . . . f 1 f .
+    . f f . . . . . . c 3 1 f f f 1 3 f .
+    c d d c . . . . . f 1 1 d d d 1 1 c .
+    . f d d f . . . f d 1 1 1 d 1 1 1 d f
+    . . f d f . . . f 1 1 c 1 1 1 1 c 1 f
+    . . f d d f f f c 1 1 1 c 1 1 c 1 1 c
+    . f d d 1 1 1 d d f 1 1 1 3 3 1 1 f .
+    . f d 1 1 1 1 1 1 1 f f c f f f c . .
+    . f 1 1 1 d 1 1 1 1 1 1 1 d d c . . .
+    f 1 1 1 1 c c f f c d 1 f 1 1 1 f . .
+    d d 1 f f . . . . . f f . f f 1 d f .
+    d f f . . . . . . . . . . . . c d f .
+    c . . . . . . . . . . . . . . . f . .
+`
+//  player setup
+game.onUpdate(function on_update3() {
+    if (controller.dx() < 0 && controller.A.isPressed()) {
+        cat.setImage(cat_left_jump)
+    } else if (controller.dx() > 0 && controller.A.isPressed()) {
+        cat.setImage(cat_right_jump)
+    } else if (controller.dx() < 0) {
+        cat.setImage(cat_left)
+    } else if (controller.dx() > 0) {
+        cat.setImage(cat_right)
+    } else {
+        cat.setImage(cat_default)
+    }
+    
+})
 scene.cameraFollowSprite(cat)
 cat.ay = 300
-tiles.placeOnTile(cat, tiles.getTileLocation(0, 8))
+tiles.placeOnTile(cat, tiles.getTileLocation(1, 8))
 // Player controls
 controller.moveSprite(cat, 100, 0)
 let double_jump = true
@@ -858,52 +979,105 @@ game.onUpdate(function on_update() {
 })
 //  powerup one
 let powerup1 = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . a a a a . . . . . . .
-    . . . . a a a a a a . . . . . .
-    . . . . a a a a a a . . . . . .
-    . . . . a a a a 4 a . . . . . .
-    . . . . . a a a 4 4 . . . . . .
-    . . . . . . . . . 4 4 . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
+    . . . 5 5 . . . 5 . . . . . . .
+    5 . . . 5 . . . 5 5 . . . . 5 5
+    5 5 . . 5 . . . . 5 . . . 5 5 .
+    . . . . 4 4 4 4 . . . . 5 5 . .
+    . . 4 4 4 4 4 4 4 . . . . . . .
+    . e 4 4 4 4 4 4 4 4 . . . . . .
+    e 4 4 4 4 4 4 4 4 4 4 . . 1 . .
+    e 4 4 4 4 4 4 4 4 4 1 1 1 1 . 5
+    e 4 4 4 4 4 4 4 4 4 4 d d 1 . 5
+    . e 4 4 4 4 4 4 4 4 e . . . . .
+    . . e e e e e e e e . . . 5 5 .
+    . 5 5 . . 5 . . . . 5 . . . . 5
+    5 5 . . . 5 5 . . . 5 5 . . . .
+    5 . . . . . 5 . . . . 5 5 . . .
+    . . . . . . 5 . . . . . 5 . . .
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Food)
 tiles.placeOnTile(powerup1, tiles.getTileLocation(10, 6))
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy(effects.coolRadial, 100)
+    controller.moveSprite(cat, 150, 0)
+    timer.debounce("action", 5000, function on_debounce() {
+        controller.moveSprite(cat, 100, 0)
+    })
 })
-//  enemies setup
+// dog images
+let dog = sprites.create(img`
+    . . . . . . 4 4 4 . . . . 4 4 4 . .
+    . . . . . 4 5 5 5 e . . e 5 5 5 4 .
+    . . . . 4 5 5 5 5 5 4 4 5 5 5 5 5 4
+    . . . . 4 5 5 4 4 5 5 5 5 4 4 5 5 4
+    . . e e 4 5 4 4 5 5 5 5 5 5 4 4 5 4
+    . 4 5 5 e 4 e 5 5 5 5 5 5 5 5 e 4 .
+    4 5 5 e . . e 5 5 f 5 5 5 f 5 e . .
+    e 5 e . . . 4 5 5 5 5 f 5 5 5 e . .
+    e 5 e 4 e e 4 5 5 5 f 5 f 5 5 4 . .
+    e 5 5 5 5 5 5 e 5 5 5 5 5 5 e . . .
+    e 5 5 5 5 5 5 5 e e e 4 4 e . . . .
+    e 5 5 5 5 5 5 5 5 5 5 e . . . . . .
+    e 5 5 5 e e e e 5 5 5 e . . . . . .
+    e 5 5 e . . . . e 5 5 e . . . . . .
+    e 5 5 e . . . . e 5 5 e . . . . . .
+    e e e e . . . . e e e e . . . . . .
+`)
+let dog_right = img`
+    . . . . . . 4 4 4 . . . . 4 4 4 . .
+    . . . . . 4 5 5 5 e . . e 5 5 5 4 .
+    . . . . 4 5 5 5 5 5 4 4 5 5 5 5 5 4
+    . . . . 4 5 5 4 4 5 5 5 5 4 4 5 5 4
+    . . e e 4 5 4 4 5 5 5 5 5 5 4 4 5 4
+    . 4 5 5 e 4 e 5 5 5 5 5 5 5 5 e 4 .
+    4 5 5 e . . e 5 5 f 5 5 5 f 5 e . .
+    e 5 e . . . 4 5 5 5 5 f 5 5 5 e . .
+    e 5 e 4 e e 4 5 5 5 f 5 f 5 5 4 . .
+    e 5 5 5 5 5 5 e 5 5 5 5 5 5 e . . .
+    e 5 5 5 5 5 5 5 e e e 4 4 e . . . .
+    e 5 5 5 5 5 5 5 5 5 5 e . . . . . .
+    e 5 5 5 e e e e 5 5 5 e . . . . . .
+    e 5 5 e . . . . e 5 5 e . . . . . .
+    e 5 5 e . . . . e 5 5 e . . . . . .
+    e e e e . . . . e e e e . . . . . .
+`
+let dog_left = img`
+    . . 4 4 4 . . . . 4 4 4 . . . . . .
+    . 4 5 5 5 e . . e 5 5 5 4 . . . . .
+    4 5 5 5 5 5 4 4 5 5 5 5 5 4 . . . .
+    4 5 5 4 4 5 5 5 5 4 4 5 5 4 . . . .
+    4 5 4 4 5 5 5 5 5 5 4 4 5 4 e e . .
+    . 4 e 5 5 5 5 5 5 5 5 e 4 e 5 5 4 .
+    . . e 5 f 5 5 5 f 5 5 e . . e 5 5 4
+    . . e 5 5 5 f 5 5 5 5 4 . . . e 5 e
+    . . 4 5 5 f 5 f 5 5 5 4 e e 4 e 5 e
+    . . . e 5 5 5 5 5 5 e 5 5 5 5 5 5 e
+    . . . . e 4 4 e e e 5 5 5 5 5 5 5 e
+    . . . . . . e 5 5 5 5 5 5 5 5 5 5 e
+    . . . . . . e 5 5 5 e e e e 5 5 5 e
+    . . . . . . e 5 5 e . . . . e 5 5 e
+    . . . . . . e 5 5 e . . . . e 5 5 e
+    . . . . . . e e e e . . . . e e e e
+`
+// dog setup
+game.onUpdate(function on_update2() {
+    if (dog.vx > 0) {
+        dog.setImage(dog_right)
+    }
+    
+    if (dog.vx < 0) {
+        dog.setImage(dog_left)
+    }
+    
+})
+tiles.placeOnTile(dog, tiles.getTileLocation(49, 8))
+dog.setKind(SpriteKind.Enemy)
+dog.ay = 800
+//  oven setup
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
     game.over()
 })
-let dog = sprites.create(img`
-    . . 4 4 4 . . . . 4 4 4 . . . .
-    . 4 5 5 5 e . . e 5 5 5 4 . . .
-    4 5 5 5 5 5 e e 5 5 5 5 5 4 . .
-    4 5 5 4 4 5 5 5 5 4 4 5 5 4 . .
-    e 5 4 4 5 5 5 5 5 5 4 4 5 e . .
-    . e e 5 5 5 5 5 5 5 5 e e . . .
-    . . e 5 f 5 5 5 5 f 5 e . . . .
-    . . f 5 5 5 4 4 5 5 5 f . . f f
-    . . f 4 5 5 f f 5 5 6 f . f 5 f
-    . . . f 6 6 6 6 6 6 4 4 f 5 5 f
-    . . . f 4 5 5 5 5 5 5 4 4 5 f .
-    . . . f 5 5 5 5 5 4 5 5 f f . .
-    . . . f 5 f f f 5 f f 5 f . . .
-    . . . f f . . f f . . f f . . .
-`)
-tiles.placeOnTile(dog, tiles.getTileLocation(45, 8))
-dog.setKind(SpriteKind.Enemy)
-dog.ay = 300
 scene.onHitTile(SpriteKind.Player, 13, function on_hit_tile2(cat: Sprite) {
-    // dog image change
     dog.follow(cat, 85)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
@@ -911,5 +1085,5 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap2(spri
 })
 //  win/lose effect
 scene.onHitTile(SpriteKind.Player, 4, function on_outside(sprite: Sprite) {
-    game.over(true)
+    game.over(true, effects.smiles)
 })
