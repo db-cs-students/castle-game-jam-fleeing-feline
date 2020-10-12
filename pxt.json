@@ -1,9 +1,11 @@
 {
     "name": "Castle Game Jam",
+    "version": "2.0.0",
     "description": "",
     "dependencies": {
         "device": "*",
-        "color-coded-tilemap": "*"
+        "color-coded-tilemap": "*",
+        "Timers": "github:microsoft/arcade-timers#v1.1.0"
     },
     "files": [
         "main.ts",
